@@ -34,5 +34,9 @@ puts obj3.class
 puts obj1.inspect
 puts obj2.inspect
 puts obj3.inspect
+
+puts "Hello"
+
+
 # puts boj4 = Singeletone.new(1)
 # puts boj4.object_id

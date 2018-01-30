@@ -2,15 +2,18 @@
 
 <%= link_to 'New Article' , new_article_path %><br>
 <br><table border="2" width= "100%">
+  
   <tr>
+    <th width= "5%" align="center">ID</th>
     <th width= "25%">Title</th>
     <th>Text</th>
-    <th colspan="3" width= "15%">&nbsp</th>
+    <th colspan="3" width= "15%">Quick links</th>
 
   </tr>
 
   <% @articles.each do |article| %>
     <tr>
+      <td align="center"><%= article.id %></td>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
       <td><%= link_to 'Show', article_path(article) %></td>

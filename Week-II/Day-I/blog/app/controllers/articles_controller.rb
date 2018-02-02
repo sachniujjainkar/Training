@@ -1,3 +1,4 @@
+
 class ArticlesController < ApplicationController
   #http_basic_authenticate_with name: "sachin", password: "bhoi", except: [:index, :show]
   before_action :authorize

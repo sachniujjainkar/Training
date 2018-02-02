@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  root 'welcome#index'
+  root 'welcome#index' 
 
   # these routes are for showing users a login form, logging them in, and logging them out.
    get '/login' => 'sessions#new'

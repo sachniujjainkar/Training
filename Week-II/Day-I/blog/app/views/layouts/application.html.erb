@@ -3,25 +3,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GifVault</title>
+  <title>Blog</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-
+<div class="menu" >
+  <div style="display: inline; float: left;">
+    <h3 style="display: inline; float: left;">LOGO<h3>
+  </div>
   <% if current_user %>
     Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
   <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+      <%= link_to 'Login', '/login' %> | <%= link_to 'Sign up', '/signup' %>
   <% end %>
-  <div class="container">
+</div>
+
+  <div style="display: inline; float: left;">
     <% flash.each do |message_type, message| %>
-      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}",style: "display: inline; float: left;") %>
     <% end %>
   </div>
-  <%= yield %>
+  <div>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

@@ -13,11 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
 form {
   background: "#bfbfbf"
 }
 body{
   background-color: #bfbfbf;
+}
+input[type=submit] {
+    width: 20em;  height: 3em;
+    font-size: 15px;
+}
+input, textarea, select, button, submit {
+  height: 2em;
+  width: 30em;
+  font: 2em;
 }
 table tr:nth-child(odd){
   background-color: #cc9c00;
@@ -27,12 +37,22 @@ table tr:nth-child(even){
   background-color: #ffbf00;
   color: #fff;
 }
+h3 {
+    display: inline;
+    font-size: 2em;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
 /*flash*/
 .alert-error {
     background-color: #ff3333;
     border-color: #eed3d7;
     color: #b94a48;
     text-align: left;
+    font-size: 30px;
  }
 
 .alert-alert {
@@ -40,6 +60,7 @@ table tr:nth-child(even){
     border-color: #eed3d7;
     color: #b94a48;
     text-align: left;
+    font-size: 20px;
  }
 
 .alert-success {
@@ -47,6 +68,7 @@ table tr:nth-child(even){
     border-color: #d6e9c6;
     color: #468847;
     text-align: left;
+    font-size: 20px;
  }
 
 .alert-danger {
@@ -54,4 +76,13 @@ table tr:nth-child(even){
     border-color: #d6e9c6;
     color: #ffffff;
     text-align: left;
+    font-size: 20px;
  }
+ .menu{
+   background-color: #4dd2ff;
+   border-color: #d6e9c6;
+   color: #ffffff;
+   text-align: right;
+   height: 40px;
+   font-size: 20px;
+}

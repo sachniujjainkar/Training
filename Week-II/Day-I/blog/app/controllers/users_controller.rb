@@ -7,12 +7,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "sucessfull signup....Welcome to the Blog App!"
+      flash[:success] = "sucessfull sign up....Welcome to the Blog App!"
 
       redirect_to '/'
     else
       flash[:danger] = "please fill correct infornation.." # Not quite right!
-      redirect_to '/signup'
+      #redirect_to '/signup'
+      render 'users/new'
     end
   end
   private

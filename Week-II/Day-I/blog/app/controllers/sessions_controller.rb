@@ -14,12 +14,14 @@ class SessionsController < ApplicationController
     else
     # If user's login doesn't work, send them back to the login form.
       flash[:danger] = "Invalid email or password please try again......"
-      redirect_to '/login'
+      #redirect_to '/login'
+      render 'sessions/new'
     end
   end
 
   def destroy
     session[:user_id] = nil
+    flash[:success] = "sucessfull Log out....bye...Have a nice day....!"
     redirect_to '/login'
   end
 

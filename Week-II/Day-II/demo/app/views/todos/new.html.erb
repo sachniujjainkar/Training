@@ -1,0 +1,11 @@
+<h2>New todo</h1>
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View list', todos_path  %></li>
+  <li class="active"><%= link_to 'New todo', new_todo_path , class: 'btn btn-success' %></li>
+</ul>
+
+
+
+<%= render 'form' %>
+
+<%= link_to 'Back', todos_path , class: 'btn btn-success' %>

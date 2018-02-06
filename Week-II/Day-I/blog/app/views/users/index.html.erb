@@ -1,0 +1,21 @@
+<h1>Listing users</h1>
+
+
+<br><table border="2" width= "100%">
+
+  <tr>
+    <th width= "5%" align="center">ID</th>
+    <th width= "25%">name</th>
+    <th>email</th>
+    <th  width= "15%">password</th>
+
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td align="center"><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+        <td><%= user.password_digest %></td>
+  <% end %>
+</table>

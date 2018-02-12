@@ -1,0 +1,43 @@
+<!-- app/views/users/new.html.erb -->
+
+
+
+<%= form_for @user, url: '/users' do |f| %>
+  <h1><span class="label label-default">Signup!</span></h1>
+  <ul class="nav nav-tabs" role="tablist">
+    <li><%= link_to 'Login', '/login' %></li>
+    <li class="active"><%= link_to 'Signup', '/signup' %></li>
+  </ul>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+  <table  width="50%" height="100px">
+
+    <tr>
+      <td>Name:</td>
+      <td> <%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td>Email:</td> <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td>Password:</td><td> <%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td>Password Confirmation:</td><td> <%= f.password_field :password_confirmation %></td>
+    </tr>
+    <tr >
+      <td></td>
+      <td style="height :30px"><%= f.submit "Submit" %></td>
+    </tr>
+  </table>
+<% end %>

@@ -1,6 +1,6 @@
 <!-- app/views/todos/_form.html.erb -->
 
-<%= form_for(@todo, html: {class: 'form-horizontal'}) do |f| %>
+<%= form_for([ @user, @todo], html: {class: 'form-horizontal'}) do |f| %>
   <% if @todo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>

@@ -1,6 +1,7 @@
 class CreateTodos < ActiveRecord::Migration[5.1]
   def change
     create_table :todos do |t|
+      t.belongs_to :user, index: true
       t.string :title
       t.text :notes
 

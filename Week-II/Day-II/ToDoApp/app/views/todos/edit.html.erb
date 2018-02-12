@@ -1,11 +1,13 @@
 
 <h1><span class="label label-default">Editing Todo</span></h1>
 <ul class="nav nav-tabs" role="tablist">
-  <li><%= link_to 'View list', todos_path   %></li>
-  <li><%= link_to 'New todo', new_todo_path  %></li>
-  <li class="active"><%= link_to 'Edit', edit_todo_path(@todo)  %></li>
+  <li><%= link_to 'View list', user_todos_path(@user)   %></li>
+  <li><%= link_to 'New todo', new_user_todo_path(@user)  %></li>
+  <li class="active"><%= link_to 'Edit', edit_user_todo_path(@user,@todo)  %></li>
 </ul>
 <%= render 'form', todo: @todo %>
 
-<%= link_to 'Show', @todo ,class: 'btn btn-info' %> |
-<%= link_to 'Back', todos_path , class: 'btn btn-success' %>
+
+
+<%= link_to 'Show', user_todo_path(@user,@todo) , class: 'btn btn-info' %> |
+<%= link_to 'Back', user_todos_path(@user) , class: 'btn btn-success' %>

@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
-  resources :todos do
-    collection do
-    get 'about'
-    get 'contact'
-    get 'support'
-  end
+  resources :users do
+    resources :todos
   end
   root 'todos#index'
-# get 'todos/login'
- get '/login' => 'todos#login'
+
+  # these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get 'allusers' => 'users#index'
+
+  get '/about' => 'staticpages#about'
+  get '/contact' => 'staticpages#contact'
+
+  get '/support' => 'staticpages#support'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

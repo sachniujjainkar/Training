@@ -1,0 +1,26 @@
+<h1>Listing an articles</h1>
+<table>
+	<tr>
+		<th> coursename</th>
+		<th> payment</th>
+		<th>birthdate </th>
+		<th> previous_course_name</th>
+		<th>previous_course_year </th>
+		<td>previous_course_year %></td>
+		<th>payment_type </th>
+		
+		<th colspan="2"</th>
+	</tr>
+	<% @registers.each do |register| %>
+	<tr>
+		<td><%= register.coursename %></td>
+		<td><%= register.payment %></td>
+		<td><%= register.birthdate %></td>
+		<td><%= register.previous_course_name %></td>
+		<td><%= register.previous_course_year %></td>
+		<td><%= register.payment_type %></td>
+		
+	</tr>
+	<% end %>
+</table>
+

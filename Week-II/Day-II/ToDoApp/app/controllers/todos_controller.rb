@@ -29,7 +29,8 @@ class TodosController < ApplicationController
   # POST /todos.json
 
   def create
-    @user = current_user
+    @user = User.find(params[:user_id])
+
     @todo =@user.todos.create(todo_params)
 
 
@@ -61,7 +62,7 @@ class TodosController < ApplicationController
         #format.json { render :show, status: :ok, location: @todo }
       else
         flash[:danger] = 'There was a problem updating the Todo.'
-      format.html { render :edit }
+        format.html { render :edit }
         format.json { render json: @todo.errors, status: :unprocessable_entity }
       end
   #  end

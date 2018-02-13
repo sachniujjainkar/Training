@@ -8,6 +8,9 @@
     <th width= "25%">name</th>
     <th>email</th>
     <th  width= "15%">password</th>
+    <th  width= "15%">Edit</th>
+    <th  width= "15%">delete</th>
+
 
   </tr>
 
@@ -16,6 +19,8 @@
       <td align="center"><%= user.id %></td>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
-        <td><%= user.password_digest %></td>
+      <td><%= user.password_digest %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) , class: 'btn btn-info btn-xs' %></td>
+      <td><%= link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-xs' %></td>
   <% end %>
 </table>

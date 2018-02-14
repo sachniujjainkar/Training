@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212061723) do
+ActiveRecord::Schema.define(version: 20180212113418) do
 
   create_table "registers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "coursename"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20180212061723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "name"
+    t.string "cno"
+    t.string "email"
     t.index ["user_id"], name: "index_registers_on_user_id"
   end
 

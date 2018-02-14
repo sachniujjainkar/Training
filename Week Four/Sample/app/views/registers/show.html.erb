@@ -1,6 +1,8 @@
+
 <p>
   <strong>Coursename :</strong>
   <%= @register.coursename  %>
+
 </p>
  
 <p>
@@ -9,7 +11,7 @@
 </p>
  
  <p>
-  <strong>Birthdate</strong>
+  <strong>Birthdate:</strong>
   <%= @register.birthdate %>
 </p>
 
@@ -27,5 +29,4 @@
   <strong>Payment_type</strong>
   <%= @register.payment_type %>
 </p>
- 
-
+ <p><%= link_to "New Registration", new_user_register_path(current_user) %></p>

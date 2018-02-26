@@ -6,7 +6,7 @@
   <li class="active"><%= link_to 'View list', user_todos_path(current_user) %></li>
   <li><%= link_to 'New todo',  new_user_todo_path(current_user) %></li>
 </ul>
-<table>
+<table class="table-hover table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -48,7 +48,7 @@
               </div>
             </div>
           <% end %>
-          
+
         </td>
         <td><%= link_to 'Show', user_todo_path(@user,todo) , class: 'btn btn-primary btn-xs' %></td>
         <td><%= link_to 'Edit', edit_user_todo_path(@user,todo) , class: 'btn btn-info btn-xs' %></td>

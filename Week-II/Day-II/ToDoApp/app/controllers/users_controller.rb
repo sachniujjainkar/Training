@@ -36,14 +36,11 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       if (params[:user][:password] == params[:user][:password_confirmation]) && (params[:user][:password] != "")
         password = BCrypt::Password.create(params[:user][:password])
-
         if @user.update_column(:password_digest, password )
-          byebug
           flash[:success] = 'User was successfully updated.'
-
           redirect_to users_path
           #format.html { redirect_to @todo }
-        #format.json { render :show, status: :ok, location: @todo }
+          #format.json { render :show, status: :ok, location: @todo }
         else
           flash[:danger] = 'There was a problem updating the User.'
           #format.html { render :edit }

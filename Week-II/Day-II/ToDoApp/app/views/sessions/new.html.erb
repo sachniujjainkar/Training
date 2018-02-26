@@ -8,15 +8,18 @@
   <li class="active"><%= link_to 'Login', '/login' %></li>
   <li><%= link_to 'Signup', '/signup' %></li>
 </ul>
-<table  width="50%" height="100px">
+<table class="table table-hover table-striped" style="width:50%;height:100%">
   <tr>
-  <td width="40%">Email: </td><td><%= text_field_tag :email %></td>
-</tr>
-<tr>
-  <td>Password:</td><td> <%= password_field_tag :password %></td>
+    <td width="40%">Email: </td>
+    <td><%= text_field_tag :email %></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td> <%= password_field_tag :password %></td>
   </tr>
   <tr>
     <td></td>
-  <td style="height :30px"><%= submit_tag "Submit" ,class: 'btn btn-success' %></td>
-</tr>
+    <td><%= submit_tag "Submit" ,class: 'btn btn-success' %></td>
+  </tr>
+</table>
 <% end %>

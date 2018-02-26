@@ -7,10 +7,9 @@ end
     @user = User.new
     unless current_user
       @user =User.new
-
-      
-    end
+   end
   end
+  
 def edit
   @user = User.find(params[:id])
   

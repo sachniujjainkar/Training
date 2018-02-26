@@ -18,8 +18,7 @@ end
         # ###redirect_to  new_user_register_path(user)
     else
     # If user's login doesn't work, send them back to the login form.
-    
-      flash[:danger] = "please fill correct infornation.." # Not quite right!
+          flash[:danger] = "please fill correct infornation.." # Not quite right!
       render "/sessions/new"
     end
   end

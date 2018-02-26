@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
    root 'parrents#home'
 	  get  '/user/registers/new'
-
+    
 	 # post 'users' => 'users#create'
       # get 'register:id', to: 'registers#show' , as: 'user'
      # get 'users', to: 'users#index' , as: 'alluser'

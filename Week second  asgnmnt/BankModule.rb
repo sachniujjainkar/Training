@@ -1,23 +1,23 @@
 module Info
 	attr_accessor :name , :id , :ini_bal , :total_bal
-	# def initialize
-		# @total_bal=0
-		# @bal = 0
-	# end
-
+	 # def initialize
+		#  @total_bal=0
+		#  @bal = 0
+	 # end
+@total_bal
 	def getInfo
 		puts "Enter the name of the Customer=>"
-		name = gets.chomp
+		@name = gets.chomp
 		puts "Enter the Customer bank ID"
-		id = gets.chomp
+		@id = gets.chomp
 		puts "Enter your initial balance"
-		ini_bal = gets
-		total_bal = ini_bal
+		ini_bal = gets.chomp
+		@total_bal = ini_bal.to_i
 	end
 	def show
-		puts "Customer Name => #{name}"
-		puts "Customer ID => #{id}"
-		puts "total_balance => #{total_bal}"
+		puts "Customer Name => #{@name}"
+		puts "Customer ID => #{@id}"
+		puts "total_balance => #{@total_bal}"
 	end
 
 end
@@ -25,13 +25,13 @@ module Deposite
 	include Info
 	attr_accessor = :depo_money , :total_bal
 	def initialize
-	  @total_bal = 0
+	   @total_bal 
  	end
 
 	def cal_deposite
 		puts "Enter how many money you want to deposit"
-		depo_money = gets
-		total_bal.to_i = (total_bal.to_i + depo_money.to_i)
+		depo_money = gets.chomp
+		@total_bal = (total_bal.to_i + depo_money.to_i)
 		puts "Your total balance is=>#{total_bal}"
 
 	end
@@ -43,7 +43,7 @@ module Withdrawal
 	def calWithdraw
 		puts "Enter how many money you want to withdraw"
 		withdraw_money=gets
-		total_bal.to_i = (total_bal.to_i- withdraw_money.to_i)
+		@total_bal = (total_bal.to_i- withdraw_money.to_i)
 		puts "Your total balance is=>#{total_bal}"
 	end
 end
@@ -67,7 +67,7 @@ class Transaction
 				case ch
 					when 1
 						getInfo
-						# show
+						 # show
 					when 2
 						show
 					when 3
@@ -76,7 +76,6 @@ class Transaction
 						calWithdraw
 					 when 5
 					 	exit
-					#return if (ch == 5)			
 				end
 		end	
 	end	

@@ -10,7 +10,7 @@ def s1.method2
  end
 
 puts s1.method1
-puts "object id of 1 object #{s1.object_id}"
+# puts "object id of 1 object #{s1.object_id}"
 puts "puts object id of method 1 #{s1.method1.object_id}"
 puts s1.method2
 puts "puts object id of method 2 #{s1.method2.object_id}"
@@ -29,6 +29,7 @@ puts "it gives the error when method2 call by ther object"
 puts SingleEg.method_defined? :method1
 puts SingleEg.method_defined? :method2
 
+p "singletoneclass output"
 singletoneclass1 = 
 (class << s1
 	self

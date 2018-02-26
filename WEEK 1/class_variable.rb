@@ -18,6 +18,7 @@ class Box
 end
 
 box1=Box.new(10,20)
+
 box2=Box.new(30,90)
 # box1.print_count
 # box2.print_count

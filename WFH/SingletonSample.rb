@@ -5,7 +5,7 @@ class SingletonSample
 	def SingletonSample.create
     @@obj = new unless @@obj
     	@@obj
-  end
+  	end
 end
 
 object=SingletonSample.create

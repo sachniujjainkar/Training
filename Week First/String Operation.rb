@@ -71,4 +71,5 @@ puts str1 < str1
 
 a="milind"
 puts "New output"
+
 puts 'My name is #{a}'

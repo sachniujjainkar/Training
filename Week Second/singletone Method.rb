@@ -1,7 +1,8 @@
 
 puts "First Way"
 s="Renuka"
-def s.math;end
+def s.nnmn
+end
 puts s.singleton_methods
 
 puts "Second Way"

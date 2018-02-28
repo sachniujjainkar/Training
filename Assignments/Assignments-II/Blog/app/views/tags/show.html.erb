@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <h3> <%= @tag.name %> Tag</h3>
+</p>
+<p id="notice"><%= notice %></p>
+
+<% @posts.each do |post| %>
+	<h3> <%= link_to post.title, post %></h3>
+	 <hr>
+<% end %>

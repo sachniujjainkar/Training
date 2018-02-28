@@ -1,0 +1,14 @@
+
+<div>
+  <p><h4><%= comment.content %></h4></p>
+    <p class="message-posted-by">Posted by <%= @post.user.email %> <%= time_ago_in_words(@post.created_at) %> ago</p>
+  <div>
+  <% if user_signed_in? %>
+	<% if comment.user_id == current_user.id %>
+	    <%= link_to 'Edit', edit_post_comment_path(comment.post,comment) %>
+	    <%= link_to 'Delete', post_comment_path(comment.post,comment), method: :delete, data: {confirm: 'Are you sure?'} %>
+	    <% end %>
+	<% end %>
+  </div>
+</div>
+<hr>

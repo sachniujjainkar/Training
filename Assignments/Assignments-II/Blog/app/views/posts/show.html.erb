@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h3><strong>Title:</strong>
+  <%= @post.title %></h3>
+</p>
+  <p>Posted by <%= @post.user.email %> <%= time_ago_in_words(@post.created_at) %> ago</p>
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+<hr>
+<p>
+  <strong>Category:</strong>
+  <%= link_to @post.category.name, category_path(@post.category.id) %>
+</p>
+<p>
+  <strong>Tags:</strong>
+   <%= raw @post.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+</p>
+<h2>Comments</h2>
+<%= render @post.comments %>
+ 
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Back', posts_path %> 
+<% if user_signed_in? %>
+	<% if @post.user_id == current_user.id %>
+		| <%= link_to 'Edit', edit_post_path(@post) %> |
+		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+<% end %>

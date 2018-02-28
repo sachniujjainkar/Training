@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+    <% @posts.each do |post| %>
+        <h3><%= link_to post.title, post %></h3>
+        <p><strong>Category:</strong><%=link_to post.category.name, post %></p>
+     	
+        <p>
+        	<strong>Tags:</strong><%= raw post.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+        </p>
+
+     	<hr>
+    <% end %>
+
+
+

@@ -8,7 +8,7 @@
   <div class="field">
     <% tags = get_tags %>
       <% tags.each do |tag| %>          
-        <input type="checkbox" value=<%= tag.id %> name="post[tag_ids][]" />
+        <input type="checkbox" value=<%= tag.id %> name="comment[tag_ids][]" />
         <label for="tag_list"><%= tag.name %></label>
       <% end %>
   </div>

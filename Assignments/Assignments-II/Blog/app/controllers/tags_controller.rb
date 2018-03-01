@@ -11,6 +11,7 @@ class TagsController < ApplicationController
   # GET /tags/1.json
   def show
     @posts = @tag.posts
+    @comments =@tag.comments
   end
 
   # GET /tags/new

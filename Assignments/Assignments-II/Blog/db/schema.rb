@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228101157) do
+ActiveRecord::Schema.define(version: 20180301051143) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20180228101157) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "ctaggings", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_ctaggings_on_comment_id"
+    t.index ["tag_id"], name: "index_ctaggings_on_tag_id"
   end
 
   create_table "models", force: :cascade do |t|

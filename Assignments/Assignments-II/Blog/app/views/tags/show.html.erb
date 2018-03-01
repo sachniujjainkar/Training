@@ -1,11 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
- <h3> <%= @tag.name %> Tag</h3>
+ <h3>Posts having <%= @tag.name %> Tag</h3>
 </p>
 <p id="notice"><%= notice %></p>
 
 <% @posts.each do |post| %>
-	<h3> <%= link_to post.title, post %></h3>
+	<h4> <%= link_to post.title, post %></h4>
+	 <hr>
+<% end %>
+
+<p>
+ <h3>Comments having <%= @tag.name %> Tag</h3>
+</p>
+<p id="notice"><%= notice %></p>
+
+<% @comments.each do |comment| %>
+	<h4> <%= link_to comment.content, comment.post %></h4>
 	 <hr>
 <% end %>

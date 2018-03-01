@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Categries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categries.each do |categry| %>
+      <tr>
+        
+        <!-- <td><%= categry.name %></td> -->
+        <td><%= link_to categry.name, categry_path(categry) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Categry', new_categry_path %>

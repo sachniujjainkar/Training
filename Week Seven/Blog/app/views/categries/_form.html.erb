@@ -1,0 +1,23 @@
+<%= form_with(model: categry, local: true) do |form| %>
+  <% if categry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(categry.errors.count, "error") %> prohibited this categry from being saved:</h2>
+
+      <ul>
+      <% categry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :categry_name %>
+  </div>
+
+ 
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

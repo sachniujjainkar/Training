@@ -1,0 +1,42 @@
+
+<%= form_with scope: :post, url: posts_path, local: true do |form| %>
+ 
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </p>
+
+ <p>
+<%= form.label :category_id %>
+   <%= form.select :category_id, Categry.all.collect { |x| [x.name, x.id]} %>
+</p>
+
+<p>  <%= form.label :Tag %>
+
+  <%= select_tag("post[tag_ids][]", options_for_select(Tag.all.collect { |tag| [tag.name, tag.id] }, @post.tags.collect { |tag| tag.id}), {:multiple=>true}) %>
+
+</p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', posts_path %>

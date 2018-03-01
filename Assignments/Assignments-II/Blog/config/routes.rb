@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :posts do
   	resources :comments
   end
+  get '/activity' => 'posts#user_activity'
   resources :categories
   resources :tags
   root "posts#index"

@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <p>
- <h3><span class="label label-default">Posts having <%= @tag.name %> Tag</span></h3>
+ <h3><span class="label label-default">Posts By User</span></h3>
 </p>
 <p id="notice"><%= notice %></p>
 
@@ -11,9 +9,9 @@
 <% end %>
 
 <p>
- <h3><span class="label label-default">Comments having <%= @tag.name %> Tag</span></h3>
+ <h3><span class="label label-default">Comments By User</span></h3>
 </p>
-<p id="notice"><%= notice %></p>
+
 
 <% @comments.each do |comment| %>
 	<h4> <%= link_to comment.content, comment.post %></h4>

@@ -10,30 +10,31 @@
       </ul>
     </div>
   <% end %>
+<table >
+  <tr class="field">
+    <td><%= form.label :title %></td>
+    <td style="padding-bottom: 4px;" ><%= form.text_field :title, id: :post_title %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
-  </div>
+  <tr class="field">
+    <td><%= form.label :body %></td>
+    <td><%= form.text_area :body, id: :post_body, size: "30x5" %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :post_body %>
-  </div>
+  <tr class="field">
+    <td><%= form.label :category_id %></td>
+    <td><%= form.select :category_id, get_categories.collect { |x| [x.name, x.id]}, { :include_bank => "Select One"} %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.select :category_id, get_categories.collect { |x| [x.name, x.id]}, { :include_bank => "Select One"} %>
-  </div>
-
-  <div class="field">
-    <% tags = get_tags %>
+  <tr class="field">
+    <td colspan="2"><% tags = get_tags %>
       <% tags.each do |tag| %>          
         <input type="checkbox" value=<%= tag.id %> name="post[tag_ids][]" />
         <label for="tag_list"><%= tag.name %></label>
-      <% end %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+      <% end %></td>
+  </tr>
+  <tr class="actions">
+    <td><%= form.submit %></td>
+  </tr>
+</table>
 <% end %>

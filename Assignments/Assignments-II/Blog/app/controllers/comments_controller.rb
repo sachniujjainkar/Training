@@ -1,15 +1,12 @@
 class CommentsController < ApplicationController
-
-
-
-
+  before_action :authenticate_user!
   before_action :find_post
   before_action :find_comment, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+ 
 
   def create
      @comment = @post.comments.create(comment_params)
-     byebug
+     
      @comment.user_id = current_user.id
      if @comment.save
         redirect_to post_path(@post)
@@ -28,7 +25,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      byebug
+      
       redirect_to post_path(@post)
     else
       render 'edit'
@@ -45,7 +42,7 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:content, :tag_ids =>[])
     end
     def find_post
-      @post = Post.find(params[:post_id])
+      @post = Post.friendly.find(params[:post_id])
     end
     def find_comment
       @comment = @post.comments.find(params[:id])

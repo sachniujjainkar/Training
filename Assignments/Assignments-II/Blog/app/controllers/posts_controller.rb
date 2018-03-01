@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   
+
+
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -66,11 +68,15 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def user_activity
+    @posts = current_user.posts
+    @comments = current_user.comments
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,0 +1,18 @@
+<h2>Comments</h2>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  <p> Posted by <strong> <%= comment.user.email %> </strong>  <%=  time_ago_in_words(comment.created_at) %>  ago  </p>
+
+  <% if user_signed_in? %>
+    <% if comment.user_id == current_user.id %>
+        <p><%= link_to "Edit" , edit_post_comment_path(comment.post, comment) %></p>
+
+        <p>
+        <%= link_to 'Destroy Comment', [comment.post, comment],
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' } %>
+        </p>
+    <% end %>
+  <% end %>

@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>Tags: <%= @post.tag_list %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @post.category.name %>
+</p>
+
+<div id='tag_cloud'>
+  <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class, title: 'Animal Tag', 'data-toggle' => 'tooltip', 'data-placement' => 'right' %>
+    <% end %>
+</div>
+
+
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+  <p>
+    <strong>Postcommenter:</strong>
+    <%= comment.postcommenter %>
+  </p>
+ 
+  <p>
+    <strong>Postcomment:</strong>
+    <%= comment.postcomment %>
+  </p>
+
+
+  
+  
+  <%= link_to 'Delete Comment', [comment.post ,comment], method: :delete, data: { confirm: 'Are you sure?' } %>    
+
+  <br /><br /><br />
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

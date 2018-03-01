@@ -1,0 +1,15 @@
+<p>
+  <strong>Postcommenter:</strong>
+  <%= comment.postcommenter %>
+</p>
+ 
+<p>
+  <strong>Postcomment:</strong>
+  <%= comment.postcomment %>
+</p>
+ 
+
+ 
+<p>
+  <%= link_to 'Destroy comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>

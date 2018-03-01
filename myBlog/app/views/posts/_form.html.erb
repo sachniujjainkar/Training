@@ -1,0 +1,47 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :post_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :post_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select(:category_id, Category.all, :id, :name) %>
+  </div>
+
+  <div class='field'>
+    <%= form.label :tag_list, 'Tags (separated by commas)' %><br/>
+    <%= form.text_field :tag_list %>
+</div>
+
+  
+
+  <div class="field">
+    <%= form.fields_for(:comments) do |builder|  %>
+    <%= render "comment_fields", :f => builder %>
+  <% end %>
+
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

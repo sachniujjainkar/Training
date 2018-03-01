@@ -1,0 +1,6 @@
+<% Category.all.each do |category| %>
+	<li>
+		<%= link_to category.name, posts_path(categories: category.name) %>
+	</li>
+<% end %>
+

@@ -5,6 +5,12 @@
   </p>
   <p> Posted by <strong> <%= comment.user.email %> </strong>  <%=  time_ago_in_words(comment.created_at) %>  ago  </p>
 
+  <% if !comment.tags.empty? %>
+      <p>
+          <strong>Tags:</strong><%= raw comment.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+      </p>
+    <% end %>
+
   <% if user_signed_in? %>
     <% if comment.user_id == current_user.id %>
         <p><%= link_to "Edit" , edit_post_comment_path(comment.post, comment) %></p>

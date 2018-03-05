@@ -1,10 +1,13 @@
 <h1>Posts</h1>
-<% if user_signed_in? %>
-<p> <strong> <%= current_user.email  %> </strong> logged in </p>
-<% end %>
+
 <% @posts.each do |post| %>
   <h1><%= link_to post.title, post %></h1>
   <p><%= post.content %></p>
+  <% if !post.tags.empty? %>
+	        <p>
+	        	<strong>Tags:</strong><%= raw post.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+	        </p>
+	     <% end %> 
   <% if user_signed_in? %>
     <% if post.user_id == current_user.id %>
       <%= link_to "Edit", edit_post_path(post) %>

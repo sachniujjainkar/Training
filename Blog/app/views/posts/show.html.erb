@@ -8,6 +8,13 @@
     <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?"} %>
   <% end %>
 <% end %>
+
+<% if !@post.tags.empty? %>
+  <p>
+    <strong>Tags:</strong><%= raw @post.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+  </p>
+<% end %>
+
 <%= render @post.comments %>
 
 

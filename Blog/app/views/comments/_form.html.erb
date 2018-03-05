@@ -4,6 +4,13 @@
     <%= f.label :comment %>
     <%= f.text_area :body %>
   </p>
+
+  <% @tags = Tag.all %>
+      <% @tags.each do |tag| %>
+        <input type="checkbox" value= <%= tag.id %> name="comment[tag_ids][]" />
+        <label for="tag_list"><%= tag.name %></label>
+      <% end %>
+
   <p>
     <%= f.submit %>
   </p>

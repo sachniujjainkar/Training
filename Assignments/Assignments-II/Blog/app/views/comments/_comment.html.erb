@@ -1,7 +1,7 @@
 
 <div>
   <p><h4><%= comment.content %></h4></p>
-    <p>Commented by <%= comment.user.email %> <%= time_ago_in_words(@post.created_at) %> ago</p>
+    <p>Commented by <%= comment.user.email %> <%= time_ago_in_words(comment.created_at) %> ago</p>
     <% if !comment.tags.empty? %>
       <p>
           <strong>Tags:</strong><%= raw comment.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>

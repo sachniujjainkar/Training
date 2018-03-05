@@ -22,10 +22,10 @@
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 
-<%= link_to 'Back', posts_path %> 
+<%= link_to 'Back', posts_path, class: "btn btn-info btn-sm" %> 
 <% if user_signed_in? %>
 	<% if @post.user_id == current_user.id %>
-		| <%= link_to 'Edit', edit_post_path(@post) %> |
-		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+		| <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info btn-sm" %> |
+		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info btn-sm" %>
 	<% end %>
 <% end %>

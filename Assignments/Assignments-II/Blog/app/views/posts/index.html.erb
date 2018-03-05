@@ -1,16 +1,22 @@
 <p id="notice"><%= notice %></p>
 <h1><span class="label label-default">Posts</span></h1>
-    <% @posts.each do |post| %>
-        <h3><%= link_to post.title, post %></h3>
-        <p><strong>Category:</strong><%=link_to post.category.name, post.category %></p>
-     	<% if !post.tags.empty? %>
-	        <p>
-	        	<strong>Tags:</strong><%= raw post.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
-	        </p>
-	     <% end %> 
+<p>
+  Download:
+  <%= link_to "CSV", posts_path(format: "csv") %> |
+  <%= link_to "Excel", posts_path(format: "xls") %>
+</p>
+   
+<% @posts.each do |post| %>
+  <h3><%= link_to post.title, post %></h3>
+  <p><strong>Category:</strong><%=link_to post.category.name, post.category %></p>
+ 	<% if !post.tags.empty? %>
+    <p>
+     	<strong>Tags:</strong><%= raw post.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+    </p>
+  <% end %> 
 
-     	<hr>
-    <% end %>
+ 	<hr>
+<% end %>
 
 
 

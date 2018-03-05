@@ -3,7 +3,7 @@
 <h1>Categories</h1>
 <%= link_to 'New Categories', new_category_path, class: "btn btn-success"  %>
 
-<h3><span class="label label-default">Name</span></h3>  
+<h3><span class="label label-default">Categeories Names</span></h3>  
     <% @categories.each do |category| %>
         <h5><%= link_to category.name, category, class: "btn btn-info btn-sm" %></h5>
     <% end %>

@@ -3,7 +3,7 @@
 <h1>Tags</h1>
 <%= link_to 'New Tags', new_tag_path, class: "btn btn-success"  %>
 
-<h3><span class="label label-default">Name</span></h3> 
+<h3><span class="label label-default">Tags Names</span></h3> 
 <div >
     <% @tags.each do |tag| %>
         <h5><%= link_to tag.name, tag, class: "btn btn-info btn-sm" %></h5>

@@ -6,12 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-          <!-- Latest compiled and minified CSS -->
-      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-      	<!-- Optional theme -->
-      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        </head>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+              
+  </head>
 
   <body>
 
@@ -27,7 +30,7 @@
             </button>
             <div class="navbar-header">
                 <%= link_to "Blog", root_path, class: "navbar-brand" %>
-              </div>
+            </div>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -41,12 +44,21 @@
                   <li><%= link_to 'Log In', new_user_session_path %></li>
                 <% end %>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorys<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <% @categories = get_categories %>
       	          	<% @categories.each do |category| %>
       	          		<li><%= link_to category.name, category %></li>
       	          	<% end %>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <% @tags = get_tags %>
+                    <% @tags.each do |tag| %>
+                      <li><%= link_to tag.name, tag %></li>
+                    <% end %>
                 </ul>
               </li>
             </ul>
@@ -57,28 +69,18 @@
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'User Activity', '/activity' %></li>
+              <li><%= link_to 'User Activitys', '/activity' %></li>
               <li><%= link_to 'Add Category', categories_path %></li>
               <li><%= link_to 'Add Tag', tags_path %></li>
               <li><%= link_to 'New Post', new_post_path %></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <% @tags = get_tags %>
-                    <% @tags.each do |tag| %>
-                      <li><%= link_to tag.name, tag %></li>
-                    <% end %>
-                </ul>
-              </li>
+              
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
 
 	  <div class="container">
-        <%= yield %>
-        <!-- Latest compiled and minified JavaScript -->
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <%= yield %>   
     </div>
  </body>
 </html>

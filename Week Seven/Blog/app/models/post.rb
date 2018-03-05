@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
 
 		belongs_to :user
-		has_many :comments
+		has_many :comments,dependent: :destroy
 		belongs_to :categry, class_name: "Categry",
                           foreign_key: "category_id"
 

@@ -1,27 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Categries</h1>
+<%= link_to 'New Categry', new_categry_path , class: "btn btn-success" %>
+<h2 >Categries</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categries.each do |categry| %>
-      <tr>
+ <!-- <form class="navbar-form navbar-left">
         
-        <!-- <td><%= categry.name %></td> -->
-        <td><%= link_to categry.name, categry_path(categry) %></td>
+      </form> -->
+      <ul class="nav navbar-nav navbar-center">
         
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Categry', new_categry_path %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% Categry.all.each do |categry| %>
+              <li><%= link_to categry.name, categry_path(categry) %></li>
+            <% end %>
+          </ul>
+           

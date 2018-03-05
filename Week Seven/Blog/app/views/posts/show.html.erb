@@ -3,21 +3,25 @@
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
- 
-<p>
+ <p>
   <strong>Text:</strong>
   <%= @post.content %>
 </p>
- 
+
+	<!-- </p>
+  <p>Posted by <%= @post.user.email %> <%= time_ago_in_words(@post.created_at) %> ago</p> -->
+<p>
+ <h3>List of tags</h3>
  <% @post.tags.each do |t| %>
  	<p> <%= t.name %>
  <% end %>
- <h2>Comments</h2>
+
+ <h3>List of all Comments</h3>
  <%= render @post.comments %>
  
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+<%= link_to "Back", '/posts' %>
 
 

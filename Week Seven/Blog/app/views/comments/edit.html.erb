@@ -1,0 +1,13 @@
+<%= form_for( [@post, @comment]) do |form| %>
+  
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>  <%= form.label :Tag %>
+
+  <%= select_tag("comment[tag_ids][]", options_for_select(Tag.all.collect { |tag| [tag.name, tag.id] }, @comment.tags.collect { |tag| tag.id}), {:multiple=>true}) %>
+
+</p>
+   <%= form.submit %>
+<% end %>

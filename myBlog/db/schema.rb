@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180301122745) do
+ActiveRecord::Schema.define(version: 20180305110036) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(version: 20180301122745) do
     t.string "postcommenter"
     t.text "postcomment"
     t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "commenttaggings", force: :cascade do |t|
+    t.integer "commenttag_id"
+    t.integer "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_commenttaggings_on_comment_id"
+    t.index ["commenttag_id"], name: "index_commenttaggings_on_commenttag_id"
+  end
+
+  create_table "commenttags", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180301122745) do
     t.datetime "updated_at", null: false
     t.string "permalink"
     t.string "slug"
+    t.integer "user_id"
     t.index ["permalink"], name: "index_posts_on_permalink"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end

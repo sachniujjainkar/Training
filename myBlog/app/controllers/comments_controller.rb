@@ -1,6 +1,19 @@
 class CommentsController < ApplicationController
 
 
+=begin 
+	def index
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all
+    end
+  end
+=end
+
+
+
+
   def create
 
 		@post=Post.find(params[:post_id])

@@ -15,3 +15,19 @@
   <dd><%= @category.name %></dd>
 
 </dl>
+
+
+
+<p>
+ 
+
+
+<h2>List of Posts</h2>
+<% @category.posts.each do |post| %>
+   <p>
+   <strong>Posts:</strong>
+   <%= post.title %>
+ </p>
+ <% end %>
+
+<%= link_to 'Back', categories_path %>

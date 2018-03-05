@@ -9,7 +9,12 @@
 </p>
  
 
- 
+ <div id='commennttag_cloud'>
+  <% commenttag_cloud Comment.commenttag_counts, %w{s m l} do |commenttag, css_class| %>
+    <%= link_to commenttag.name, commenttag_path(commenttag.name), class: css_class, title: 'Animal Tag', 'data-toggle' => 'tooltip', 'data-placement' => 'right' %>
+    <% end %>
+</div>
+
 <p>
   <%= link_to 'Destroy comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

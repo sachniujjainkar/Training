@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>Tags: <%= @post.tag_list %></p>
+<p><strong>Tags: <%= @post.tag_list %><strong></p>
 
 <p>
   <strong>Title:</strong>
@@ -37,6 +37,7 @@
   </p>
 
 
+  
   
   
   <%= link_to 'Delete Comment', [comment.post ,comment], method: :delete, data: { confirm: 'Are you sure?' } %>    

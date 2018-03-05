@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'acts-as-taggable-on'
 
+gem 'record_tag_helper', '~> 1.0'
+
 
 gem 'devise'
 

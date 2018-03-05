@@ -9,3 +9,5 @@ Category.create(name: 'mammals')
 Category.create(name: 'birds')
 Category.create(name: 'fishes')
 
+Commenttag.create(name: 'New')
+

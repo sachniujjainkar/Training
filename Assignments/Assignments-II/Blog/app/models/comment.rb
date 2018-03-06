@@ -4,5 +4,5 @@ class Comment < ApplicationRecord
 
   has_many :ctaggings, dependent: :destroy
   has_many :tags, through: :ctaggings
-
+  validates :content, presence: true
 end

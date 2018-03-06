@@ -5,4 +5,6 @@ class Tag < ApplicationRecord
 
 	has_many :ctaggings, dependent: :destroy
 	has_many :comments, through: :ctaggings
+
+	validates :name, uniqueness: true
 end

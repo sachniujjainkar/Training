@@ -3,7 +3,8 @@
 <p>
   Download:
   <%= link_to "CSV", posts_path(format: "csv") %> |
-  <%= link_to "Excel", posts_path(format: "xls") %>
+  <%= link_to "Excel", posts_path(format: "xls") %> |
+  <%= link_to 'PDF', posts_path(format: "pdf") %>
 </p>
    
 <% @posts.each do |post| %>

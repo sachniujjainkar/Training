@@ -34,6 +34,8 @@ gem 'jquery-rails'
 # gem 'capistrano-rails', group: :development
 gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'friendly_id', '~> 5.1.0'
+#gem 'prawnto',:git => 'https://github.com/saikiranmothe/prawnto.git'
+gem 'prawn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

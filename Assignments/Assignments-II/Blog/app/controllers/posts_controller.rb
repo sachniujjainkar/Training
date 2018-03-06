@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  require './app/pdfs/posts_pdf'
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   
@@ -8,7 +9,12 @@ class PostsController < ApplicationController
         format.html
         format.csv { send_data @posts.to_csv }
         format.xls 
+        format.pdf do
+          pdf = PostsPdf.new(@posts)
+          send_data pdf.render, filename: 'Posts.pdf', type: "application/pdf", disposition: "inline"    
+        end
       end
+     
   end
   
   def show

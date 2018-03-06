@@ -1,0 +1,57 @@
+@import "bootstrap-variables.scss";
+@import "bootstrap-sprockets.scss";
+@import "bootstrap.scss";
+
+body {
+  padding-top: $navbar-height + 10px;
+}
+
+.page-header {
+  a.btn {
+    float: right;
+  }
+
+  a.btn + a.btn {
+    margin-right: 8px;
+  }
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: initial;
+  height: initial;
+  margin-top: 7px;
+}
+
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+
+.container input[type="submit"] {
+  height: 30px;
+  font-size: 13px;
+  background-color: #f55e55;
+  border: none;
+  color: #fff;
+}
+
+
+td {
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+td:first-child {
+  padding-left: 0;
+}
+
+td:last-child {
+  padding-right: 0;
+}
+
+.spacer {
+  width: 15px;
+}

@@ -1,0 +1,19 @@
+<p>
+  <strong>Postcomment:</strong>
+  <%= comment.postcomment %>
+</p>
+ 
+<p><strong>Tags:</strong>
+ <% comment.tags.each do |t| %>
+ 	<%= link_to t.name, tag_path(t.name), title: 'Animal Tag', 'data-toggle' => 'tooltip', 'data-placement' => 'right' %> 
+ <% end %>
+</p>
+
+
+
+
+<p>
+  <%= link_to 'Destroy Comment', [comment.post, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

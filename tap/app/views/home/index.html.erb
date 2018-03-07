@@ -12,7 +12,13 @@
 <tr>
 <td><%= link_to post.title, post %></td>
 
+
 </tr>
+	<%# if current_user.id == post.user_id %>
+<td>Created By: <%= post.try(:user).try(:username) %></td>
+<%# end %>
+
+
 <% end %>
 
           
@@ -22,3 +28,4 @@
 
 <h3>Categories</h3>
 <%= render 'list' %>
+

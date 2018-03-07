@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'static_pages/about'
+
+  get 'static_pages/contact'
+
   get 'devisehome/index'
 
   devise_for :users, controllers: { registrations: "registrations" }
@@ -17,6 +21,8 @@ end
 
 root 'home#index'
 get 'home/index'
+
+get 'posts/indexs'
 
 get 'tags/:tag', to: 'posts#index', as: :tag
 

@@ -4,4 +4,6 @@ class Tag < ApplicationRecord
 
 	has_many :ctaggings
 	has_many :comments, through: :ctaggings
+	validates :name , uniqueness: true 
+
 end

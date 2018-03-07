@@ -2,26 +2,31 @@
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
-</p>
+</p><hr>
  <p>
   <strong>Text:</strong>
   <%= @post.content %>
-</p>
+</p><hr>
 
-	<!-- </p>
-  <p>Posted by <%= @post.user.email %> <%= time_ago_in_words(@post.created_at) %> ago</p> -->
-<p>
- <h3>List of tags</h3>
- <% @post.tags.each do |t| %>
- 	<p> <%= t.name %>
- <% end %>
+<p><strong>Category Name</strong>
+<%= @post.categry.name  %>
+</p><hr>
 
- <h3>List of all Comments</h3>
+
+
+ <% if !@post.tags.empty? %>
+  <p>
+    <strong>Tags:</strong><%= raw @post.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+  </p>
+<% end %><hr>
+
+
+ <h1>List of all Comments</h1>
  <%= render @post.comments %>
- 
-<h2>Add a comment:</h2>
+ <hr>
+<h3>Add a comment:</h3>
 <%= render 'comments/form' %>
-
+<hr>
 <%= link_to "Back", '/posts' %>
 
 

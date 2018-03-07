@@ -1,11 +1,12 @@
 <strong>Comment:</strong>
-<td> <%= comment.body %></td><br>
+ <%= comment.body %><br>
 <td>Commented by user_id =><%= comment.user_id %> </td><br>
-<p> Tag Name <p>
- <% comment.tags.each do |t| %>
- 	 <%= t.name %> <br>
- <% end %>
- <br>
+
+ <% if !comment.tags.empty? %>
+      <p>
+          <strong>Tags:</strong><%= raw comment.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+      </p>
+    <% end %>
 <p>
 	<% if current_user.id == comment.user_id %>
 	<%= link_to 'Update comment' , edit_comment_path(comment) %>
@@ -13,4 +14,4 @@
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
                <% end %>
-</p>
+</p><hr>

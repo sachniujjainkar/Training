@@ -11,5 +11,5 @@ class Post < ApplicationRecord
                   length: { minimum: 5 }
 
                   has_many :ptaggings
-	has_many :tags, through: :ptaggings
+	has_many :tags, through: :ptaggings,dependent: :destroy
 end

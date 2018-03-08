@@ -3,9 +3,9 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
 	belongs_to :user
 	belongs_to :category
-	has_many :comments
+	has_many :comments ,dependent: :destroy
 
-	has_many :post_taggings
+	has_many :post_taggings, dependent: :destroy
 	has_many :tags, through: :post_taggings
 
 	# acts_as_taggable_on :tags

@@ -1,0 +1,45 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :user_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :user_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.date_select :birtday, id: :user_birtday, :start_year => Date.current.year, :end_year => 1990 %>
+  </div>
+
+  
+  <hr>
+  <h3>User Address</h3>
+  <%= form.fields_for :addresses do |builder| %>
+    <% render "address_fields", f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Address", form, :addresses %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

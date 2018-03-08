@@ -1,0 +1,64 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table class="table" >
+    <tr class="right">
+      <td align="right"><%= form.label :name %></td>
+      <td><%= form.text_field :name, id: :product_name %></td>
+    </tr>
+
+    <tr class="right">
+      <td align="right"><%= form.label :sku %></td>
+      <td><%= form.text_field :sku, id: :product_sku %></td>
+    </tr>
+
+    <tr class="right">
+      <td align="right"><%= form.label :price %></td>
+      <td><%= form.number_field :price, id: :product_price, step: :any %></td>
+    </tr>
+
+    <tr class="right">
+      <td align="right"><%= form.label :quantity %></td>
+      <td><%= form.number_field :quantity, id: :product_quantity %></td>
+    </tr>
+
+    <tr class="right">
+      <td align="right"><%= form.label :weight %></td>
+      <td><%= form.number_field :weight, id: :product_weight, step: :any %></td>
+    </tr>
+
+    <tr class="right">
+      <td align="right"><%= form.label :width %></td>
+      <td><%= form.number_field :width, id: :product_width, step: :any %></td>
+    </tr>
+
+    <tr class="right">
+      <td align="right"><%= form.label :height %></td>
+      <td><%= form.number_field :height, id: :product_height, step: :any %></td>
+    </tr>
+
+    <tr class="right">
+      <td align="right"><%= form.label :depth %></td>
+      <td><%= form.number_field :depth, id: :product_depth, step: :any %></td>
+    </tr>
+
+    <tr class="right">
+      <td align="right"><%= form.label :image %></td>
+      <td><%= form.file_field :image %></td>
+    </tr>
+
+    <tr class="actions">
+      <td></td>
+      <td><%= form.submit class: "btn btn-success btn-sm" %></td>
+    </tr>
+  </table>
+<% end %>

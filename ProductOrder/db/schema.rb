@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308132635) do
+ActiveRecord::Schema.define(version: 20180309131543) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip_code"
+    t.string   "contact"
+    t.string   "email"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "order_no"
+    t.boolean  "is_express_delivery"
+    t.boolean  "is_customer_pickup"
+    t.date     "delivery_date"
+    t.string   "order_currency"
+    t.string   "special_instruction"
+    t.integer  "user_id"
+    t.integer  "address_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -35,4 +62,5 @@ ActiveRecord::Schema.define(version: 20180308132635) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "addresses", "users"
 end

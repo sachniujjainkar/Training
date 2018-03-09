@@ -6,7 +6,7 @@
   <%= f.text_area :content, placeholder: "type the post here" %><br>
   <%= f.collection_select(:category_id, Category.all, :id, :name, {prompt: "Choose A Category"}) %><br>
   <% @tags = Tag.all %>
-  <% @tags.each do |tag| %>          
+  <% @tags.each do |tag| %>
       <input type="checkbox" value=<%= tag.id %> name="post[tag_ids][]" />
       <label for="tag_list"><%= tag.name %></label>
     <% end %></td>

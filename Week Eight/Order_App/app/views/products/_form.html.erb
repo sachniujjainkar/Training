@@ -1,0 +1,72 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sku %>
+    <%= form.text_field :sku, id: :product_sku %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :product_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :length %>
+    <%= form.text_field :length, id: :product_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_field :width, id: :product_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height, id: :product_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight, id: :product_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost_price %>
+    <%= form.text_field :cost_price, id: :product_cost_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :storage_type %>
+    <%= form.text_field :storage_type, id: :product_storage_type %>
+  </div>
+
+   <div class="field">
+     <%= form.label :prduct_image %>
+    <%= form.file_field:prduct_image, id: :product_prduct_image %>
+
+  </div> 
+
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Orders</h1>
-
-<table>
+<%= link_to 'New Order', new_order_path, class: "btn btn-success" %>
+<hr>
+<table class="table">
   <thead>
     <tr>
       <th>Order no</th>
@@ -10,7 +11,7 @@
       <th>Is custommer pickup</th>
       <th>Delivery date</th>
       <th>Order currency</th>
-      <th>Order currency</th>
+      <th>Order price</th>
       <th>Special instruction</th>
       <th>User</th>
       <th>Address</th>
@@ -26,10 +27,10 @@
         <td><%= order.is_custommer_Pickup %></td>
         <td><%= order.delivery_date %></td>
         <td><%= order.order_currency %></td>
-        <td><%= order.order_currency %></td>
+        <td><%= order.order_price %></td>
         <td><%= order.special_instruction %></td>
-        <td><%= order.user %></td>
-        <td><%= order.address %></td>
+        <td><%= order.user.first_name %></td>
+        <td><%= order.address.line1 %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -40,4 +41,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+

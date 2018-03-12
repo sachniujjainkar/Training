@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
+
+$(document).ready ->
 	addresses = $('#order_address_id').html()
 	$('#order_user_id').change ->
 		user = $('#order_user_id :selected').val()
@@ -11,3 +13,6 @@ jQuery ->
 			$('#order_address_id').html(options)
 		else
 			$('#order_address_id').empty()	
+
+
+	

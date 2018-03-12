@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309094432) do
+ActiveRecord::Schema.define(version: 20180312102009) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "line1"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20180309094432) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "line_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.decimal "price"
+    t.integer "order_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "order_no"
     t.boolean "is_express_delivery"
@@ -39,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180309094432) do
     t.integer "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "order_price"
     t.index ["address_id"], name: "index_orders_on_address_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end

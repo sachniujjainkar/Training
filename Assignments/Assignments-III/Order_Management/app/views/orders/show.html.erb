@@ -37,12 +37,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @order.user %>
+  <%=@order.user.first_name + " " + @order.user.last_name %>
 </p>
 
 <p>
   <strong>Address:</strong>
-  <%= @order.address %>
+  <%= @order.address.inspect %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

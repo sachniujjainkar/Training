@@ -1,3 +1,57 @@
+<script>
+  $(document).ready(function(){
+      $('.search').on('keyup',function(){
+          var searchTerm = $(this).val().toLowerCase();
+          $('#productTbl tbody tr').each(function(){
+              var lineStr = $(this).text().toLowerCase();
+              if(lineStr.indexOf(searchTerm) === -1){
+                  $(this).hide();
+              }else{
+                  $(this).show();
+              }
+          });
+      });
+  });
+</script>
+<script type="text/javascript">
+  $(document).on("change", '#order_address_id', function() {
+    var address = $('#order_address_id :selected').val()
+      $.ajax({
+                   url: "/addresses/" + address, // Route to the Script Controller method
+                  type: "GET",
+              dataType: "json",
+                  
+              complete: function() {},
+               success: function(data) { 
+                        
+                         $('#line1').val(data['line1']);
+                         $('#line2').val(data['line2']);
+                         $('#line3').val(data['line3']);
+                         $('#city').val(data['city']);
+                         $('#state').val(data['state']);
+                         $('#country').val(data['country']);
+                         $('#postal_code').val(data['postal_code']);
+                         $('#contact_no').val(data['contact_no']);
+                         $('#email').val(data['email']);
+                                                            
+                        },
+                 error: function() {
+                          alert("Ajax error!")
+                        }
+      });
+  });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.add_product').click(function(evt){
+         $(this).closest('tr').hide()
+         $(".line_items").append("<%= j render 'line_item_fields' %>");
+         evt.preventDefault()
+
+      });
+    });
+</script>
+
 <%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
@@ -11,54 +65,169 @@
     </div>
   <% end %>
 
-<div class="row">
-            <div class="field">
-              <%= form.label :user_id %>
-              <%= form.select :user_id, User.all.collect { |user| [user.first_name + " " + user.last_name , user.id]}, {:prompt => true}, {id: 'order_user_id'}%>
-            </div>
-            <div class="field">
-              <%= form.label :address_id %>
-              <%= form.grouped_collection_select :address_id, User.order(:id), :addresses, :id, :id, :line1, {:prompt => true}, { id: 'order_address_id'} %>
-            </div>  
+    <div class="row">
+      <div class="col-md-4">
+          <%= form.label :user_id %>
+           <%= form.select :user_id, User.all.collect { |user| [user.first_name + " " + user.last_name , user.id]}, {:prompt => true}, {id: 'order_user_id'}%>
+      </div>
+           
+               
+      <div class="col-md-4">
+          <%= form.label :address_id %>
+          <%= form.grouped_collection_select :address_id, User.order(:id), :addresses, :id, :id, :line1, {:prompt => true}, { id: 'order_address_id'} %>
+      </div>         
+    </div>
+    <hr>
+     <div class="row">
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :line1 %></div>
+          <div class="col-md-6"><%= text_field_tag :line1, "", :readonly => true %></div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :line2 %></div>
+          <div class="col-md-6"><%= text_field_tag :line2, "", :readonly => true %></div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :line3 %></div>
+          <div class="col-md-6"><%= text_field_tag :line3, "", :readonly => true %></div>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :city %></div>
+          <div class="col-md-6"><%= text_field_tag :city, "", :readonly => true %></div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :state %></div>
+         <div class="col-md-6"><%= text_field_tag :state, "", :readonly => true %></div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :country %></div>
+          <div class="col-md-6"><%= text_field_tag :country, "", :readonly => true %></div>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :postal_code %></div>
+          <div class="col-md-6"><%= text_field_tag :postal_code, "", :readonly => true %></div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :contact_no %></div>
+          <div class="col-md-6"><%= text_field_tag :contact_no, "", :readonly => true %></div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-4"><%= label_tag :email %></div>
+          <div class="col-md-6"><%= email_field_tag :email, "", :readonly => true %></div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <%= form.label :order_no %>
+          <%= form.text_field :order_no, id: :order_order_no %>
+        </div>
+
+        <div class="col-md-4">
+            <%= form.label :is_express_delivery %>
+            <%= form.check_box :is_express_delivery, id: :order_is_express_delivery %>
+
+        </div>
+
+        <div class="col-md-4">
+           <%= form.label :is_custommer_Pickup %>
+           <%= form.check_box :is_custommer_Pickup, id: :order_is_custommer_Pickup %>
+        </div>
+      </div>     
+      <br>      
+      <div class="row">
+        <div class="col-md-4">
+          <%= form.label :delivery_date %>
+          <%= form.date_select :delivery_date, id: :order_delivery_date %>
+        </div>
+
+        <div class="col-md-4">
+          <%= form.label :order_currency %>
+          <%= form.select :order_currency, options_for_select([['INR'], ['JPY'], ['SGD'], ['USD'], ['AFN'], ['KHR'], ['CNY'], ['COP'], ['ISK']]) %>
+
+        </div>
+
+        <div class="col-md-4">
+          <%= form.label :order_price %>
+          <%= form.text_field :order_price, id: :order_order_price %>
+        </div>
+            
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <%= form.label :special_instruction %>
+          <%= form.text_field :special_instruction, id: :order_special_instruction %>
+        </div>
+      </div>
+      <hr>
+      <h2>Line Items</h2>
+      <div class="row" id="hello">
+        <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>SKU</th>
+            <th>Sku</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="line_items" >
+       </tbody>
+
+      </div>
+      <div class="row">
+          <%= form.submit %>
+      </div>
+  <% end %>
+<hr>
+
+<div class="container">
+<div class="form-group pull-right">
+    <input type="text" class="search form-control" placeholder="Search products">
 </div>
-<div class="row">
-            <div class="field">
-              <%= form.label :order_no %>
-              <%= form.text_field :order_no, id: :order_order_no %>
-            </div>
+<table id="productTbl" class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Sku</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Weight</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Depth</th>
+      <th></th>
+    </tr>
+  </thead>
 
-            <div class="field">
-              <%= form.label :is_express_delivery %>
-              <%= form.check_box :is_express_delivery, id: :order_is_express_delivery %>
-
-            </div>
-
-            <div class="field">
-              <%= form.label :is_custommer_Pickup %>
-              <%= form.check_box :is_custommer_Pickup, id: :order_is_custommer_Pickup %>
-            </div>
- </div>           
-<div class="row">
-            <div class="field">
-              <%= form.label :delivery_date %>
-              <%= form.date_select :delivery_date, id: :order_delivery_date %>
-            </div>
-
-            <div class="field">
-              <%= form.label :order_currency %>
-              <%= form.text_field :order_currency, id: :order_order_currency %>
-
-            </div>
-
-            <div class="field">
-              <%= form.label :special_instruction %>
-              <%= form.text_field :special_instruction, id: :order_special_instruction %>
-            </div>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr id="<%= product.id %>">
+        <td><%= image_tag(product.image_url(:thumb).to_s) %></td>
+        <td><%= product.name %></td>
+        <td><%= product.sku %></td>
+        <td><%= product.price %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.weight %></td>
+        <td><%= product.width %></td>
+        <td><%= product.height %></td>
+        <td><%= product.depth %></td>
+        <td><%= link_to 'Add product', "#",class: 'add_product', id: product.id %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>
-<div class="row">
-            <div class="actions">
-              <%= form.submit %>
-            </div>
-</div>
-<% end %>
-

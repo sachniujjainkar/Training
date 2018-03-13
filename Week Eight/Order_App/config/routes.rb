@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :users do
-  	resources :addresses
-  end
-  resources :products
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ 
+  root 'home#index'
+
+		resources :users 
+		resources :orders
+		resources :addresses
+		resources :products
 end

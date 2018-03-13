@@ -1,14 +1,29 @@
+<script type="text/javascript">
+$(document).ready(function(){
+   $('.search').on('keyup',function(){
+       var searchTerm = $(this).val().toLowerCase();
+       $('#productTbl tbody tr').each(function(){
+           var lineStr = $(this).text().toLowerCase();
+           if(lineStr.indexOf(searchTerm) === -1){
+               $(this).hide();
+           }else{
+               $(this).show();
+           }
+       });
+   });
+});
+</script>
 <p id="notice"><%= notice %></p>
 
 
-<h1>Products</h1>
+<h1 align="center">Products</h1>
 
 <%= form_tag(products_path, method: :get) do %>
   <%= text_field_tag :name, params[:name] %>
   <%= submit_tag 'Search', name: nil  %>
 <% end %>
 
-<table>
+<table class="table", border-collapse: separate>
   <thead>
     <tr>
       <th>Sku</th>
@@ -43,9 +58,9 @@
 <%= image_tag product.prduct_image, :size => "60x50", class: "img-responsive" %>
 </td>
 
-       <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><%= link_to 'Show', product , class: "btn btn-info"%></td>
+        <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-info" %></td>
+        <td><%= link_to 'Destroy', product, class: "btn btn-info",method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -53,4 +68,5 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<!-- # <%= link_to 'New Product', new_product_path %>
+ -->

@@ -4,17 +4,22 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
+    # @addresses = Address.all
+
   end
 
   # GET /addresses/1
   # GET /addresses/1.json
   def show
+    # respond_to do |format|
+    #  format.html {redirect_to @addresses}
+    #  format.json { render json: @addresses}   if request.xhr?
   end
 
   # GET /addresses/new
   def new
-    @address = Address.new
+    # @address = Address.new
+
   end
 
   # GET /addresses/1/edit
@@ -24,7 +29,10 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    @address = Address.new(address_params)
+    @user=User.find(params[:user_id])
+
+    @address = @user.addresses.create(address_params)
+      redirect_to user_path(@user)
 
     respond_to do |format|
       if @address.save
@@ -53,11 +61,8 @@ class AddressesController < ApplicationController
 
   # DELETE /addresses/1
   # DELETE /addresses/1.json
-  def destroy
-    @address.destroy
-    respond_to do |format|
-      format.html { redirect_to addresses_url, notice: 'Address was successfully destroyed.' }
-      format.json { head :no_content }
+  user.addresses.find_each(&:destroy)
+  redirect_to user_path(@user)
     end
   end
 
@@ -69,6 +74,6 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:user_id, :address_body, :city, :state, :postal_code)
+      params.require(:address).permit(:address_body, :city, :state, :postal_code)
     end
 end

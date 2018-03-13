@@ -9,7 +9,24 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//require jquery2
+//= require jquery
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree
+//= require_bootstrap
+
+
+
+
+
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".panel").remove();
+}
+
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $(link).parent().after(content.replace(regexp, new_id));
+}

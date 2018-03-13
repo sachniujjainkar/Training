@@ -3,6 +3,17 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+
+
+  def get_addresses
+  @user = User.find params[:id]
+  @addresses = @user.addresses
+
+  respond_to do |format|
+   format.json {render json: @addresses}
+  end
+
+ end
   def index
     @users = User.all
   end
@@ -15,7 +26,8 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    # 3.times { @user.addresses.build }
+    # @address = @user.addresses.build 
+    
   end
 
   # GET /users/1/edit
@@ -70,6 +82,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :dob, :email, addresses_attributes: [:id, :address_body, :city, :state, :postal_code,:_destroy])
+      params.require(:user).permit(:first_name, :last_name, :dob, :email, addresses_attributes: [:id, :_destroy,:address_body, :city, :state, :postal_code])
     end
 end

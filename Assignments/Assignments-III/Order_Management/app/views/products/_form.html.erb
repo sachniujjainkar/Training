@@ -12,42 +12,42 @@
   <% end %>
   <table class="table" >
     <tr class="right">
-      <td align="right"><%= form.label :name %></td>
+      <td align="right"><%= form.label :name , class: "required"%></td>
       <td><%= form.text_field :name, id: :product_name %></td>
     </tr>
 
     <tr class="right">
-      <td align="right"><%= form.label :sku %></td>
+      <td align="right"><%= form.label :sku, class: "required" %></td>
       <td><%= form.text_field :sku, id: :product_sku %></td>
     </tr>
 
     <tr class="right">
-      <td align="right"><%= form.label :price %></td>
+      <td align="right"><%= form.label :price, class: "required" %></td>
       <td><%= form.number_field :price, id: :product_price, step: :any %></td>
     </tr>
 
     <tr class="right">
-      <td align="right"><%= form.label :quantity %></td>
+      <td align="right"><%= form.label :quantity, class: "required" %></td>
       <td><%= form.number_field :quantity, id: :product_quantity %></td>
     </tr>
 
     <tr class="right">
-      <td align="right"><%= form.label :weight %></td>
+      <td align="right"><%= form.label 'weight(gm)' %></td>
       <td><%= form.number_field :weight, id: :product_weight, step: :any %></td>
     </tr>
 
     <tr class="right">
-      <td align="right"><%= form.label :width %></td>
+      <td align="right"><%= form.label 'width(cm)' %></td>
       <td><%= form.number_field :width, id: :product_width, step: :any %></td>
     </tr>
 
     <tr class="right">
-      <td align="right"><%= form.label :height %></td>
+      <td align="right"><%= form.label 'height(cm)' %></td>
       <td><%= form.number_field :height, id: :product_height, step: :any %></td>
     </tr>
 
     <tr class="right">
-      <td align="right"><%= form.label :depth %></td>
+      <td align="right"><%= form.label 'depth(cm)' %></td>
       <td><%= form.number_field :depth, id: :product_depth, step: :any %></td>
     </tr>
 

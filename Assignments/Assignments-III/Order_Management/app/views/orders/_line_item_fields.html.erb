@@ -1,25 +1,46 @@
- <tr>
+
+<script>
+  $(document).ready(function(){
+  	var privious_quantity
+  	var order_price
+  	var product_price
+      $(".product_quantity").click(function(){
+          privious_quantity = $(this).val()
+          order_price = $("#order_order_price").val()
+          product_price = $(this).closest('fieldset').find('.product_price').val()        
+      });
+      $(".product_quantity").focusout(function(){
+          new_quantity = $(this).val()
+          order_price = order_price - (privious_quantity * product_price)
+          alert(new_quantity)
+          order_price = order_price + (new_quantity * product_price)
+          $("#order_order_price").val(order_price) 
+          event.preventDefault()
+
+      });
+
+  });
+</script>
 <fieldset>
   
-   
+  <div class="row">
  
-      <td><%= text_field_tag :name, nil, size: "20" %></td>
+     <div class="col-md-2"><%= text_field_tag :product_id, @product.id,id: "order_line_item_product_id", size: "10", :readonly => true %></div>
     
    
-      <td><%= text_field_tag :sku, nil, size: "10" %></td>
+     <div class="col-md-2"><%= text_field_tag :sku, @product.sku,id: "order_line_item_product_sku", size: "10", :readonly => true %></div>
     
    
      
-      <td><%= number_field_tag :price, nil, size: "5" %></td>
+     <div class="col-md-2"><%= number_field_tag :price, @product.price,id: "order_line_item_product_price", size: "5", :readonly => true, class: "product_price" %></div>
     
    
-      <td><%= number_field_tag :quantity, nil, size: "5" %></td>
+     <div class="col-md-2"><%= number_field_tag :quantity, 0,  min: 1, id: "order_line_item_product_quantity", size: "5", class: "product_quantity" %></div>
     
    
-      <td><%= hidden_field_tag :_destroy %>
-      <%= link_to "remove", '#', class: "remove_fields btn btn-xs btn-danger"%></tr>td>
+     <div class="col-md-2"><%= hidden_field_tag :_destroy,id: "order_line_item_destroy" %>
+      <%= link_to "remove", '#', class: "remove_fields btn btn-xs btn-danger"%></div>
     
-    
-
+   </div>
+   <hr>
 </fieldset>
-</tr>

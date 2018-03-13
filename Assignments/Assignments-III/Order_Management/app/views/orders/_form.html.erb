@@ -44,13 +44,41 @@
 <script type="text/javascript">
     $(document).ready(function(){
       $('.add_product').click(function(evt){
+        var id = $(this).attr("id")
+         //alert(id)
          $(this).closest('tr').hide()
-         $(".line_items").append("<%= j render 'line_item_fields' %>");
+         
+         $.ajax({
+                   url: "/products/" + id, // Route to the Script Controller method
+                  type: "GET",
+                  sucess: function(data){
+                    alert(data);
+                  }
+
+              
+      });
+
          evt.preventDefault()
+         // time = new Date().getTime()
+         // regexp = new RegExp($(this).data('id'), 'g')
+         // $(this).before($(this).data('fields').replace(regexp, time))
+         // evt.preventDefault()
 
       });
     });
 </script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.remove_fields').click(function(event){
+      $(this).prev('input[type=hidden]').val('1')
+      $(this).closest('tr').hide()
+      $(this).closest('fieldset').hide()
+      event.preventDefault()
+    });
+  });
+</script>
+
 
 <%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
@@ -67,13 +95,13 @@
 
     <div class="row">
       <div class="col-md-4">
-          <%= form.label :user_id %>
+          <%= form.label :user_id, class: "required" %>
            <%= form.select :user_id, User.all.collect { |user| [user.first_name + " " + user.last_name , user.id]}, {:prompt => true}, {id: 'order_user_id'}%>
       </div>
            
                
       <div class="col-md-4">
-          <%= form.label :address_id %>
+          <%= form.label :address_id, class: "required" %>
           <%= form.grouped_collection_select :address_id, User.order(:id), :addresses, :id, :id, :line1, {:prompt => true}, { id: 'order_address_id'} %>
       </div>         
     </div>
@@ -127,7 +155,7 @@
       <hr>
       <div class="row">
         <div class="col-md-4">
-          <%= form.label :order_no %>
+          <%= form.label :order_no, class: "required" %>
           <%= form.text_field :order_no, id: :order_order_no %>
         </div>
 
@@ -145,19 +173,19 @@
       <br>      
       <div class="row">
         <div class="col-md-4">
-          <%= form.label :delivery_date %>
+          <%= form.label :delivery_date, class: "required" %>
           <%= form.date_select :delivery_date, id: :order_delivery_date %>
         </div>
 
         <div class="col-md-4">
-          <%= form.label :order_currency %>
+          <%= form.label :order_currency, class: "required" %>
           <%= form.select :order_currency, options_for_select([['INR'], ['JPY'], ['SGD'], ['USD'], ['AFN'], ['KHR'], ['CNY'], ['COP'], ['ISK']]) %>
 
         </div>
 
         <div class="col-md-4">
-          <%= form.label :order_price %>
-          <%= form.text_field :order_price, id: :order_order_price %>
+          <%= form.label :order_price, class: "required" %>
+          <%= form.text_field :order_price, value: 0, id: :order_order_price, :readonly => true %>
         </div>
             
       </div>
@@ -170,22 +198,18 @@
       </div>
       <hr>
       <h2>Line Items</h2>
-      <div class="row" id="hello">
-        <table class="table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>SKU</th>
-            <th>Sku</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody class="line_items" >
-       </tbody>
-
+     
+  
+  
+      <div class="row line_items" id="hello">
+        <div class="col-md-2"><strong>product ID</strong></div>
+        <div class="col-md-2"><strong>SKU</strong></div>
+        <div class="col-md-2"><strong>Price</strong></div>
+        <div class="col-md-2"><strong>Quantity</strong></div>
+        <div class="col-md-2"><strong></strong></div>
+        <hr>
       </div>
+
       <div class="row">
           <%= form.submit %>
       </div>

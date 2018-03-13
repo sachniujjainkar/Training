@@ -10,6 +10,13 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    respond_to do |format|
+      if request.xhr?
+        format.js  
+      else
+        format.html
+      end
+    end
   end
 
   # GET /products/new

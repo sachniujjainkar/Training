@@ -42,10 +42,10 @@
   });
 </script>
 <script type="text/javascript">
-    $(document).ready(function(){
+     $(document).ajaxComplete(function(){
       $('.add_product').click(function(evt){
         var id = $(this).attr("id")
-         //alert(id)
+         alert("add product"+id)
          $(this).closest('tr').hide()
          
          $.ajax({
@@ -53,9 +53,7 @@
                   type: "GET",
                   sucess: function(data){
                     alert(data);
-                  }
-
-              
+                  }         
       });
 
          evt.preventDefault()
@@ -79,8 +77,31 @@
   });
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.search_product').click(function(evt){
+       // alert('in serch script')
+        var sku = $('#search_by_sku').val()
+         //alert(id)
+        
+         
+         $.ajax({
+                   url: "/products/" + sku +"/get_product_by_sku", // Route to the Script Controller method
+                  type: "GET",
+                  sucess: function(data){
+                   // alert(data);
+                  }       
+              });
+         evt.preventDefault()
+      });
+    });
+</script>
+
+
+
 
 <%= form_with(model: order, local: true) do |form| %>
+  <% set_form_object form %>
   <% if order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -152,6 +173,7 @@
           <div class="col-md-6"><%= email_field_tag :email, "", :readonly => true %></div>
         </div>
       </div>
+      <h3>Order Details</h3>
       <hr>
       <div class="row">
         <div class="col-md-4">
@@ -197,10 +219,8 @@
         </div>
       </div>
       <hr>
-      <h2>Line Items</h2>
-     
-  
-  
+
+      <h3>Line Items</h3>
       <div class="row line_items" id="hello">
         <div class="col-md-2"><strong>product ID</strong></div>
         <div class="col-md-2"><strong>SKU</strong></div>
@@ -209,6 +229,33 @@
         <div class="col-md-2"><strong></strong></div>
         <hr>
       </div>
+  
+      <h3>Search Product</h3>
+      <div class="row">
+        <div class="col-md-1"><strong>SKU:</strong></div>
+        <div class="col-md-2"><%= text_field_tag :search_sku, '',id: :search_by_sku %></div>
+        <div class="col-md-2"><%= link_to 'Search Product', '#', class: 'btn btn-sm btn-info search_product' %></div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Sku</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Weight</th>
+              <th>Width</th>
+              <th>Height</th>
+              <th>Depth</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody class="product_serched_by_sku">
+          </tbody>
+        </table>
+      </div>
 
       <div class="row">
           <%= form.submit %>
@@ -216,7 +263,7 @@
   <% end %>
 <hr>
 
-<div class="container">
+<!-- <div class="container">
 <div class="form-group pull-right">
     <input type="text" class="search form-control" placeholder="Search products">
 </div>
@@ -255,3 +302,4 @@
   </tbody>
 </table>
 </div>
+ -->

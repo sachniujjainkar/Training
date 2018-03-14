@@ -24,22 +24,23 @@
 <fieldset>
   
   <div class="row">
+    <% r = rand(10000000000) %>
  
-     <div class="col-md-2"><%= text_field_tag :product_id, @product.id,id: "order_line_item_product_id", size: "10", :readonly => true %></div>
+     <div class="col-md-2"><%= text_field_tag "order[line_items_attributes][#{r}][product_id]", @product.id, id: "order_line_item_product_id", size: "10", :readonly => true %></div>
     
    
-     <div class="col-md-2"><%= text_field_tag :sku, @product.sku,id: "order_line_item_product_sku", size: "10", :readonly => true %></div>
+     <div class="col-md-2"><%= text_field_tag "order[line_items_attributes][#{r}][sku]", @product.sku,id: "order_line_item_product_sku", size: "10", :readonly => true %></div>
     
    
      
-     <div class="col-md-2"><%= number_field_tag :price, @product.price,id: "order_line_item_product_price", size: "5", :readonly => true, class: "product_price" %></div>
+     <div class="col-md-2"><%= number_field_tag "order[line_items_attributes][#{r}][price]", @product.price,id: "order_line_item_product_price", size: "5", :readonly => true, class: "product_price" %></div>
     
    
-     <div class="col-md-2"><%= number_field_tag :quantity, 0,  min: 1, id: "order_line_item_product_quantity", size: "5", class: "product_quantity" %></div>
+     <div class="col-md-2"><%= number_field_tag "order[line_items_attributes][#{r}][quantity]", 0,  min: 1, id: "order_line_item_product_quantity", size: "5", class: "product_quantity" %></div>
     
    
-     <div class="col-md-2"><%= hidden_field_tag :_destroy,id: "order_line_item_destroy" %>
-      <%= link_to "remove", '#', class: "remove_fields btn btn-xs btn-danger"%></div>
+     <div class="col-md-2"><%= hidden_field_tag "order[line_items_attributes][#{r}][_destroy]" %>
+      <%= link_to "remove", '#', class: "remove_fields btn btn-xs btn-warning"%></div>
     
    </div>
    <hr>

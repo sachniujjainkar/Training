@@ -1,0 +1,6 @@
+
+<% if @product %>
+$('.product_serched_by_sku').append("<%= j render 'table_row', locals: {product: @product } %>");
+<% else %>
+	alert("product not found...");
+<% end %>

@@ -20,13 +20,13 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+     @products = Product.all
   end
 
   # POST /orders
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-byebug
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
@@ -70,6 +70,6 @@ byebug
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:order_no, :is_express_delivery, :is_custommer_Pickup, :delivery_date, :order_currency, :order_currency, :special_instruction, :user_id, :address_id, :order_price)
+      params.require(:order).permit(:order_no, :is_express_delivery, :is_custommer_Pickup, :delivery_date, :order_currency, :order_currency, :special_instruction, :user_id, :address_id, :order_price, line_items_attributes: [:quantity, :price, :product_id, :_destroy])
     end
 end

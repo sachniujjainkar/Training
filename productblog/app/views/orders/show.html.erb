@@ -1,0 +1,117 @@
+<div class="page-header">
+  <%= link_to orders_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_order_path(@order), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show order</h1>
+</div>
+
+<!-- <div class="panel panel-default">
+ --><dl class="dl-horizontal">
+<h4>Users Details</h4>
+  <%# @order.addresses.each do |address| %>
+  
+    <dt>First Name:</dt>
+    <dd><%= @order.user.first_name %></dd>
+
+    <dt>Last Name:</dt>
+    <dd><%= @order.user.last_name %></dd>
+
+    <dt>Email:</dt>
+    <dd><%= @order.user.email %></dd>
+
+    <dt>Contact:</dt>
+    <dd><%= @order.user.contact %></dd>
+    
+    
+  </dl>
+
+  <dl class="dl-horizontal">
+<h4>Shipping Address</h4>
+  <%# @order.addresses.each do |address| %>
+  
+    <dt>Line 1:</dt>
+    <dd><%= @order.address.line_1 %></dd>
+    
+    <dt>Line 2:</dt>
+    <dd><%= @order.address.line_2 %></dd>
+
+    <dt>Street:</dt>
+    <dd><%= @order.address.street %></dd>
+    
+    <dt>City:</dt>
+    <dd><%= @order.address.city %></dd>
+    
+    <dt>State:</dt>
+    <dd><%= @order.address.state %></dd>
+    
+    <dt>Country:</dt>
+    <dd><%= @order.address.country %></dd>
+
+    <dt>Postal Code:</dt>
+    <dd><%= @order.address.postal_code %></dd>
+    
+  </dl>
+<!-- </div>
+ -->
+
+<dl class="dl-horizontal">
+  <h4>Order Details</h4>
+  <dt>Order no:</dt>
+  <dd><%= @order.order_no %></dd>
+
+  <dt>Tracking no:</dt>
+  <dd><%= @order.tracking_no %></dd>
+
+  <dt>Is express delivery:</dt>
+  <dd><%= @order.is_express_delivery %></dd>
+
+  <dt>Is customer pickup:</dt>
+  <dd><%= @order.is_customer_pickup %></dd>
+
+  <dt>Dilivery date:</dt>
+  <dd><%= @order.dilivery_date %></dd>
+
+  <dt>Order currency:</dt>
+  <dd><%= @order.order_currency %></dd>
+
+  <dt>Special instruction:</dt>
+  <dd><%= @order.special_instruction %></dd>
+
+  <dt>Order value:</dt>
+  <dd><%= @order.order_value %></dd>
+
+ 
+
+
+ 
+
+
+ <h3 align="center">Line Items</h3>
+ <% @order.lineitems.each do |item| %>
+   <dl>
+   <dt>
+   <strong>Product_name</strong>
+ </dt>
+   <dd><%= item.name %></dd>
+   <dt>
+   <strong>Quantity</strong>
+ </dt>
+       <dd><%= item.quantity %><dd>
+
+       <dt><strong>Price:</strong></dt>
+       <dd><%= item.price %></dd>
+
+       <dt><strong>Product id</strong></dt>
+       <dd><%= item.product_id %><dd>
+
+       
+
+
+   
+<% end %>
+

@@ -1,0 +1,192 @@
+
+<div class="panel panel-default total", id: "div1" >
+  
+   <%= link_to_remove_fields "remove", f %>
+            
+                
+                <div class="row">
+                      <div class="col-md-6 ">
+                          <%= f.label "Product Name" %>
+                      </div>
+                      <div class="col-md-6 col-md-pull-2">
+                          <%= f.text_field :name, id: "name", class: "name", :required => true %>
+                           <%#= f.text_field :product_id, class: "pid"%>
+                      </div>
+                  </div>
+                
+
+
+                
+                    
+               
+                  <div class="row">
+                      <div class="col-md-6 ">
+                          <%= f.label "SKU" %>
+                      </div>
+                      <div class="col-md-6 col-md-pull-2">
+                          <%= f.text_field :sku, id: "sku",  class: "sku", :required => true %>
+                      </div>
+                  </div>
+              
+                
+                  <div class="row">
+                      <div class="col-md-6 ">
+                          <%= f.label "Product_id" %>
+                      </div>
+                      <div class="col-md-6 col-md-pull-2">
+                          <%= f.text_field :product_id, id: "pid", class: "pid", :required => true %>
+                      </div>
+                  </div>
+               
+                  <div class="row">
+                      <div class="col-md-6 ">
+                          <%= f.label "Description" %>
+                      </div>
+                      <div class="col-md-6 col-md-pull-2">
+                          <%= f.text_field :description, class: "desc", :required => true %>
+                      </div>
+                  </div>
+               
+                  <div class="row">
+                      <div class="col-md-6 ">
+                            <%= f.label "Quantity" %>
+                      </div>
+                      <div class="col-md-6 col-md-pull-2">
+                          <%= f.number_field :quantity , class: "qty", :required => true%>
+                      </div>
+                  </div>
+                
+                  <div class="row">
+                        <div class="col-md-6 ">
+                            <%= f.label "Price" %>
+                          </div>
+                          <div class="col-md-6 col-md-pull-2">
+                              <%= f.text_field :price, id: 8, class: "price" , :required => true, :readonly => true%>
+                              <%#= f.text_field :price, value: 0, class: "total"%>
+                          </div>
+                  </div>
+                
+
+
+
+
+            
+
+  </div>
+
+
+
+<script>
+
+
+
+// $(document).ready(function(){
+//         update_amounts();
+//         $('.qty').change(function() {
+//             update_amounts();
+//         });
+//     });
+
+// function update_amounts()
+//     {
+
+//         var sum = 0.0;
+//         $('#myTable > tbody  > tr').each(function() {
+       
+//             var qty = $(this).find('option:selected').val();
+//             var price = $(this).find('.price').text();
+//             var amount = (qty*price)
+//             sum+=amount;
+//             $(this).find('.amount').text(''+amount);
+//         });
+//         //calculate the total to sum  
+//         $('.total').val(sum);
+//         //calculate total + shipping and add VAT
+//         var shipping = $('.shipping').val();
+//         var total = $('.total').val();
+//         var vat = $('.vat').val();
+//         //calculate vat
+//          var vat_value = ((total*vat)/100);
+//         //calculate grand total
+        
+//         sub_total = (parseFloat(total)+parseFloat(shipping)).toFixed(1);
+        
+//         var grand_total = (parseFloat(sub_total)+parseFloat(vat_value                    )).toFixed(1);
+      
+//         $('.grandTotal').val(grand_total);
+//     }
+              
+               
+
+
+// $(document).ready(function(){
+// $('.qty').change(function() {
+//     update_amounts();
+// });
+// function update_amounts()
+// {
+//     //alert("hi");
+//      var sum = 0.0;
+//       $('#myTable > tbody  > tr').each(function() {
+
+
+//     //     var qty = $(this).find('option:selected').val();
+//     //     var price = $(this).find('.price').val();
+//     //     var amount = (qty*price)
+//     //     sum+=amount;
+//     //     $(this).find('.amount').text(''+amount);
+//     // });
+//     // //just update the total to sum  
+//     // $('#order_order_value').text(sum);
+// }
+// });
+
+
+//       function update_amounts()
+// {
+//     var sum = 0.0;
+//     $('#myTable > tbody  > tr').each(function() {
+//         var qty = $(this).find('option:selected').val();
+//         var price = $(this).find('.price').val();
+//         var amount = (qty*price)
+//         sum+=amount;
+//         $(this).find('.amount').text(''+amount);
+//     });
+//     //just update the total to sum  
+//     $('.total').text(sum);
+// }
+
+
+
+  $(document).ready(function(){
+    var privious_quantity
+    var order_price
+    var product_price
+      $(".qty").click(function(){
+          privious_quantity = $(this).val()
+          order_price = $("#order_order_value").val()
+          product_price = $(this).closest('.total').find('.price').val()    
+          //alert(order_price);    
+      });
+      $(".qty").focusout(function(){
+          new_quantity = $(this).val()
+          order_price = order_price - (privious_quantity * product_price)
+          alert(new_quantity);
+          //alert(previous_price);
+          alert(product_price);
+          order_price = order_price + (new_quantity * product_price)
+          //alert(order_price);
+          $("#order_order_value").val(order_price) 
+          event.preventDefault()
+      });
+  });
+
+
+
+</script>     
+        
+
+
+
+
+  

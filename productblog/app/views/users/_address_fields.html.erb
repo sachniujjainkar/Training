@@ -1,0 +1,56 @@
+<div class="fields">
+<h3>Address</h3>
+	
+		<p>
+			<%= f.label :line_1 %>
+			<%= f.text_area :line_1 %>
+		
+			<%= f.label :line_2 %>
+			<%= f.text_area :line_2 %>
+		</p>
+
+		<p>
+			<%= f.label :street %>
+			<%= f.text_field :street %><br /><br />
+		
+			
+
+      		 City:</td> <td><%= f.select :city, ['Pune','Mumbai','Delhi'], :prompt => "Select a city" %>
+
+
+			
+
+      		 State:</td> <td><%= f.select :state, ['Maharashtra','UP','MP'], :prompt => "Select a state" %>
+
+			
+
+      		 Country:</td> <td><%= f.select :country, ['India','Singapour'], :prompt => "Select a country" %>
+
+      	</p>
+
+      	<p>
+			<%= f.label :postal_code %><br />
+			<%= f.number_field :postal_code %>
+
+			<%#= f.check_box :_destroy %>
+			<%#= f.label :_destroy, "Remove address" %>
+
+      	</p><br />
+
+
+
+      	<%#= link_to_remove_fields "remove", fbr />
+
+      	<%#= f.check_box :_destroy %>
+      	<%#= f.label :_destroy, "Remove address" %>
+      	<%= f.hidden_field :_destroy %>
+      	<%= link_to "remove address" , '#', class: "remove_fields" %>
+
+
+<br />
+
+
+
+
+
+

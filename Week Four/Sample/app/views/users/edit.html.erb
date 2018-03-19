@@ -1,0 +1,44 @@
+
+
+<h1>Edit User!</h1>
+
+<%= form_for @user do |f| %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<table align="center" width="50%" height="100px">
+
+  <tr>
+    <td>Name:</td>
+    <td> <%= f.text_field :name %></td>
+  </tr>
+  <tr>
+  <td>Email:</td> <td><%= f.text_field :email %></td>
+  </tr>
+  <tr>
+  <td>Contact:</td> <td><%= f.text_field :contact %></td>
+  </tr>
+  <tr>
+  <td>Password:</td><td> <%= f.password_field :password %></td>
+</tr>
+<tr>
+  <td>Password Confirmation:</td><td> <%= f.password_field :password_confirmation %></td>
+</tr>
+<tr >
+  <td></td>
+  <td style="height :30px"><%= f.submit "Submit" %></td>
+</tr>
+</table>
+<% end %>
+
+<%= link_to "Back" , users_path %>

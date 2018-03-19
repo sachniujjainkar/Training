@@ -1,0 +1,25 @@
+<table align="center" width="50%" height="250px">
+<tr>  
+    <td><%= f.label :address_body %>
+    <td><%= f.text_area :address_body, id: :address_address_body %>
+  </tr>
+
+ <tr>
+    <td><%= f.label :city %>
+    <td><%= f.text_field :city, id: :address_city %>
+  </tr>
+
+<tr>
+    <td><%= f.label :state %></td>
+    <td><%= f.text_field :state, id: :address_state %></td>
+  </tr>
+
+ <tr>
+    <td><%= f.label :postal_code %></td>
+    <td><%= f.text_field :postal_code, id: :address_postal_code %></td>
+  </tr>
+<tr>
+    <td><%= f.check_box :_destroy %></td>
+      <td><%= f.label :_destroy, "Remove address" %></td>
+  </tr>
+</table>

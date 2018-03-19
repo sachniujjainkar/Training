@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @product.sku %>
+</p>
+<hr>
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+<hr>
+<p>
+  <strong>Quantity:</strong>
+  <%= @product.quantity %>
+</p>
+<hr>
+<p>
+  <strong>Length:</strong>
+  <%= @product.length %>
+</p>
+<hr>
+<p>
+  <strong>Width:</strong>
+  <%= @product.width %>
+</p>
+<hr>
+<p>
+  <strong>Height:</strong>
+  <%= @product.height %>
+</p>
+<hr>
+<p>
+  <strong>Weight:</strong>
+  <%= @product.weight %>
+</p>
+<hr>
+<p>
+  <strong>Cost price:</strong>
+  <%= @product.cost_price %>
+</p>
+<hr>
+<p>
+  <strong>Storage type:</strong>
+  <%= @product.storage_type %>
+</p>
+<hr>
+<p>
+  <strong>Prduct image:</strong>
+<!--    <%= @product.prduct_image %>
+ -->   <%= image_tag(@product.prduct_image_url.to_s ) %>
+ 
+</p>
+<hr>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

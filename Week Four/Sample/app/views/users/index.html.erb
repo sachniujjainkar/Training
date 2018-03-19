@@ -1,0 +1,23 @@
+<h1>Listing an articles</h1>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Contact</th>
+		<th>email</th>
+		
+		<th colspan="2"</th>
+	</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<td><%= user.name %></td>
+		<td><%= user.email %></td>
+		<td><%= user.contact %></td>
+		<td><%= link_to 'Edit', edit_user_path(user) %></td>
+		<td><%= link_to 'Destroy', destroy_path(user) %></td>
+
+
+		
+	</tr>
+	<% end %>
+	
+</table>

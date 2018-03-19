@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p><hr>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p><hr>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @user.dob %>
+</p><hr>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p><hr>
+<hr>
+<h3>Addresses</h3>
+	<% @user.addresses.each do |address| %>
+		<li>
+  			<strong>Address:</strong>
+  			<%= address.address_body %>    
+		
+		<strong>City:</strong>
+  			<%= address.city %>
+
+  			<strong>State:</strong>
+  			<%= address.state %>
+
+  			<strong>Postal Code:</strong>
+  			<%= address.postal_code %>
+
+		</li>
+
+<hr>
+	<% end %>
+
+
+
+<%= link_to 'Edit', edit_user_path(@user),class: "btn btn-info" %> |
+<%= link_to 'Back', users_path,class: "btn btn-info" %>

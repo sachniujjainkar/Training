@@ -1,0 +1,32 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p><hr>
+ <p>
+  <strong>Text:</strong>
+  <%= @post.content %>
+</p><hr>
+
+<p><strong>Category Name</strong>
+<%= @post.categry.name  %>
+</p><hr>
+
+
+
+ <% if !@post.tags.empty? %>
+  <p>
+    <strong>Tags:</strong><%= raw @post.tags.map { |t| link_to t.name, tag_path(t.id)}.join(', ') %>
+  </p>
+<% end %><hr>
+
+
+ <h1>List of all Comments</h1>
+ <%= render @post.comments %>
+ <hr>
+<h3>Add a comment:</h3>
+<%= render 'comments/form' %>
+<hr>
+<%= link_to "Back", '/posts' %>
+
+

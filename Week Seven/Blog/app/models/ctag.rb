@@ -1,0 +1,3 @@
+class Ctag < ApplicationRecord
+	
+end

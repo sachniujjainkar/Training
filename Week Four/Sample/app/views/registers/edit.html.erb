@@ -1,0 +1,60 @@
+<h1>Edit Register User</h1>
+ 
+<h1>Please fill up the following form</h1>
+</div>
+<%= form_for ([@user , @register])  do |f| %>
+<% if @register.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@register.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <ul>
+      <% @register.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<table align="center" width="50%" height="100px">
+
+  <tr>
+  <td>Name:</td> <td><%= f.text_field :name %></td>
+  </tr>
+
+  <tr>
+  <td>Contact Number:</td> <td><%= f.text_field :cno %></td>
+  </tr>
+
+  <tr>
+  <td>Email Id:</td> <td><%= f.text_field :email %></td>
+  <tr>
+  </tr>
+    <td>Course Name:</td> <td><%= f.select :coursename, ['MCA','Msc Cs','Msc IT']%></td>
+  <tr>
+  <td>Fee:</td> <td><%= f.text_field :payment %></td>
+  </tr>
+  <tr>
+  <td>Brth Date:</td> <td><%= f.text_field :birthdate %></td>
+  </tr>
+  <tr>
+  <td>Previous Course Name:</td><td> <%= f.text_field :previous_course_name %></td>
+</tr>
+<tr>
+  <td>Previous Course Year:</td><td> <%= f.text_field :previous_course_year %></td>
+</tr>
+<tr>
+  <td>Payment Type:</td><td> <%= f.text_field :payment_type %></td>
+</tr>
+<tr >
+  <td></td>
+  <td style="height :50px"><%= f.submit "Submit" %></td>
+</tr>
+</table>
+<% end %>
+</br>
+
+
+
+ 
+<%= link_to 'Back', user_registers_path(current_user)%>

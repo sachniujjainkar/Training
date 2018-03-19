@@ -1,0 +1,32 @@
+
+<p>
+  <strong>Coursename :</strong>
+  <%= @register.coursename  %>
+
+</p>
+ 
+<p>
+  <strong>Payment :</strong>
+  <%= @register.payment  %>
+</p>
+ 
+ <p>
+  <strong>Birthdate:</strong>
+  <%= @register.birthdate %>
+</p>
+
+<p>
+  <strong>Previous_course_name:</strong>
+  <%= @register.previous_course_name %>
+</p>
+
+<p>
+  <strong>Previous_course_year</strong>
+  <%= @register.previous_course_year %>
+</p>
+
+<p>
+  <strong>Payment_type</strong>
+  <%= @register.payment_type %>
+</p>
+ <p><%= link_to "New Registration", new_user_register_path(current_user) %></p>

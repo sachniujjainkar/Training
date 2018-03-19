@@ -1,0 +1,145 @@
+<%= form_for (@order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </tr>
+  <% end %>
+
+<script type="text/javascript">
+$(document).on("change", '#customer_id', function() {
+  // alert('DJ' );
+  var user_id =  this.value;
+  alert(user_id);
+  $.ajax({
+       url: "/users/"+user_id+"/get_addresses", //+SELLERID,
+       type: "GET",
+       dataType: "json",
+       complete: function() {},
+       success: function(data) { 
+         alert(data);
+       }
+     });
+ });
+
+</script>
+<script type="text/javascript">
+  $(document).on("change", '#order_address_id', function() {
+  var add = $('#order_address_id :selected').val()
+    $.ajax({
+                 url: "/addresses/" + add, // Route to the Script Controller method
+                type: "GET",
+            dataType: "json",
+                
+            complete: function() {},
+             success: function(data) { 
+                      
+                       $('#1').val(data['address_body']);
+                       $('#2').val(data['city']);
+                       $('#3').val(data['state']);
+                       $('#4').val(data['postal_code']);
+                     },
+               error: function() {
+                        alert("Ajax error!")
+                      }
+    });
+});
+</script>
+<table align="center" width="50%" height="200%" cellspacing="30" >
+
+<tr>
+  <td><%= form.label :Select_user %></td>
+  <td><%= form.select :user_id, User.all.collect { |user| [user.first_name + " " + user.last_name, user.id]},{:prompt => true} , {id: 'order_user_id'} %>
+  </td>
+</tr>
+
+<tr>
+ <td><%= form.label :address_id %>
+<td><%= form.grouped_collection_select :address_id, User.order(:id), :addresses, :id, :id, :address_body, {:prompt => true}, { id: 'order_address_id'} %></td>
+ </tr>
+<td>
+
+
+  
+<tr>
+
+  <%= form.fields_for(:addresses) do |address| %>
+            <tr>
+            <td><%= address.label :Address_body %></td>
+            <td><%= address.text_field :address_body , :recityquired => true , id: 1%></td></tr>
+            <tr><td><%= address.label :city %></td>
+            <td><%= address.text_field :city , :required => true , id: 2%></td></tr>
+            <tr><td><%= address.label :state %></td>
+            <td><%= address.text_field :state , :required => true , id: 3%></td></tr>
+            <tr><td><%= address.label :postal_code %></td>
+            <td><%= address.text_field :postal_code , :required => true , id: 4%> </td> </tr> 
+   <% end %>
+   </td>
+   </tr>
+
+<tr>
+    <td><%= form.label :order_no %></td>
+    <td><%= form.number_field :order_no, id: :order_order_no %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :is_express_delivery %></td>
+    <td><%= form.check_box :is_express_delivery, id: :order_is_express_delivery %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :is_customer_pickup %></td>
+    <td><%= form.check_box :is_customer_pickup_boolean, id: :order_is_customer_pickup_boolean %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :delivery_date %></td>
+    <td><%= form.date_select :delivery_date, id: :order_delivery_date,:start_year => Date.current.
+    year, :end_year => 1990,:required => true %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :order_currency %></td>
+    <td><%= form.text_field :order_currency, id: :order_order_currency %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :order_value %></td>
+    <td><%= form.text_field :order_value, id: :order_order_value %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :tracking_no %></td>
+    <td><%= form.number_field :tracking_no, id: :order_tracking_no %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :special_instruction %></td>
+    <td><%= form.text_area :special_instruction, id: :order_special_instruction %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :user_id %></td>
+    <td><%= form.text_field :user_id, id: :order_user_id %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :address_id %></td>
+    <td><%= form.text_field :address_id, id: :order_address_id %></td>
+  </tr>
+<tr>
+  <tr>
+    <td><%= link_to 'Add Line Item', products_path %></td>
+  </tr>
+<td>
+    <%= form.submit %></td>
+  
+  </tr>
+
+</table>
+<% end %>

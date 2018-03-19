@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @categry.name %>
+
+
+<h2>List of Posts</h2>
+<% @categry.posts.each do |post| %>
+    <p>
+    <strong>Posts Title:</strong>
+    <%= post.title %><br>
+    <strong>Post Content:</strong>
+    <%= post.content %><hr>
+  </p>
+  <% end %>
+
+<%= link_to 'Back', categries_path %>

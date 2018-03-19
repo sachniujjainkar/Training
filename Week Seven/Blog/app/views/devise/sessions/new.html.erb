@@ -1,0 +1,27 @@
+<h2 align="center">Log in</h2>
+
+<table align="center">
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<tr>
+
+  <div class="field">
+<td>    <%= f.label :email %><br /> </td>
+   <td> <%= f.email_field :email, autofocus: true, autocomplete: "email" %></td></tr>
+  </div>
+<tr>
+  <div class="field">
+    <td><%= f.label :password %><br /></td>
+    <td><%= f.password_field :password, autocomplete: "off" %></td>
+  </div>
+</tr>
+
+<tr>
+  <div class="actions">
+   <td> <%= f.submit "Log in" %></td>
+  </div>
+<% end %>
+</tr>
+<tr><td><%= render "devise/shared/links" %>
+</td></tr>
+</table>

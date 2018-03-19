@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <% @posts.each do |post| %>
+	<h4> <%= link_to post.title, post %></h4>
+	 <hr>
+<% end %>
+</p>
+
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>

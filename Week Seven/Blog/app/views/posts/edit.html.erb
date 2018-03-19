@@ -1,0 +1,40 @@
+<h1>Edit post</h1>
+ 
+<%= form_with(model: @post) do |form| %>
+ 
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <table width="50%" height="100px" border="solid">
+  <tr>
+    <td> <%= form.label :title %></td>
+     <td> <%= form.text_field :title %> </td>
+  </tr>
+  <tr>
+   <td> <%= form.label :content %> </td>
+    <td> <%= form.text_area :content %> </td>
+  </tr>
+   <tr>
+  <td> <%= form.label :category_id %> </td>
+  <td> <%= form.select :category_id, Categry.all.collect { |x| [x.name, x.id]} %> </td>
+  </tr>
+  <tr>
+    <td><%= form.label :Tag %></td>
+    <td><%= select_tag("post[tag_ids][]", options_for_select(Tag.all.collect { |tag| [tag.name, tag.id] }, @post.tags.collect { |tag| tag.id}), {:multiple=>true}) %></td>
+  </tr>
+  <tr> <td> <%= form.submit %> </td>
+</tr>
+ </table>    
+ <% end %>
+<%= link_to 'Back', posts_path %>

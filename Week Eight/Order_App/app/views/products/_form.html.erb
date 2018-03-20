@@ -1,7 +1,7 @@
-<%= form_with(model: product, local: true) do |form| %>
+<%= form_for(@product) do |form| %>
   <% if product.errors.any? %>
     <tr id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h4><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h4>
 
       <ul>
       <% product.errors.full_messages.each do |message| %>
@@ -11,19 +11,19 @@
     </tr>
   <% end %>
 
-<table align="center" width="50%" height="200%" cellspacing="30" >
+<table align="center" class="table" >
   <tr align="center">
-    <td><%= form.label :sku %></td>
+    <td><font color="red">*</font><%= form.label :sku %></td>
     <td><%= form.text_field :sku, id: :product_sku %></td>
   </tr>
 <tr> </tr>
-  <tr align="center">
+  <tr align="center" >
    <td> <%= form.label :name %></td>
     <td><%= form.text_field :name, id: :product_name %></td>
   </tr>
 
   <tr  align="center" >
-    <td><%= form.label :quantity %></td>
+    <td><font color="red">*</font><%= form.label :quantity %></td>
     <td><%= form.number_field :quantity, id: :product_quantity %></td>
   </tr>
 
@@ -48,13 +48,13 @@
   </td>
 
   <tr align="center">
-    <td><%= form.label :cost_price %></td>
+    <td><font color="red">*</font><%= form.label :cost_price %></td>
     <td><%= form.text_field :cost_price, id: :product_cost_price %></td>
   </td>
 
   <tr align="center">
-    <td><%= form.label :storage_type %></td>
-    <td><%= form.text_field :storage_type, id: :product_storage_type %></td>
+    <td><font color="red">*</font><%= form.label :storage_type %></td>
+    <td><%= form.select :storage_type, ['Standerd','Temperature'] %></td>
   </td>
 
    <tr align="center" >
@@ -64,7 +64,8 @@
   </td> 
 
   <tr class="actions" align="right">
-    <td ><%= form.submit %></td>
+    <td ></td>
   </tr>
 </table> 
+<%= form.submit %>
 <% end %>

@@ -1,0 +1,100 @@
+<!-- Script for fetch product -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.search_product').click(function(evt){
+      var table = $(this).closest("table")
+      var price =$(this).closest("tr").next().next().children(":last").children()
+      price.val("1234")
+      var product_id =$(this).closest("tr").next().next().next().children(":last").children()
+      product_id.val("1111")
+      var name =$(this).closest("tr").next().next().next().next().children(":last").children()
+      name.val("renu")
+      var sku = $(this).closest("td").find("input").val()
+     // alert(sku)
+      evt.preventDefault()
+      $.ajax({
+                 url: "/products/" + sku + "/get_product_by_sku", // Route to the Script Controller method
+                type: "GET",
+            dataType: "json",
+                
+            complete: function() {
+              //alert("jason completed")
+            },
+             success: function(data) { 
+               //alert("Hello");
+                      price.val(data['sku'])                    
+                      price.val(data['cost_price'])
+                      product_id.val(data['id'])
+                      name.val(data['name'])
+                      evt.preventDefault()
+                     },
+               error: function() {
+                        alert("Ajax error!")
+                      }
+    });
+       //alert(sku)
+
+
+    });
+  });
+
+</script>
+<!-- Script for calculate price -->
+<script>
+  $(document).ready(function(){
+    var privious_quantity
+    var order_price
+    var product_price
+      $(".quantity").click(function(){
+        alert( Hello);
+          privious_quantity = $(this).val()
+          order_price = $("#order_order_value").val().html()
+            
+          product_price = $(this).closest('table').find('.p_id').val()        
+      });
+      $(".p_id").focusout(function(){
+          new_quantity = $(this).val()
+          order_price = order_price - (privious_quantity * product_price)
+          alert(new_quantity)
+          order_price = order_price + (new_quantity * product_price)
+          $("#order_order_price").val(order_price) 
+          event.preventDefault()
+      });
+  });
+</script>
+
+
+
+
+<table align="center" width="50%" height="250px">
+<tr>
+    <td><%= f.label :SKU %>
+    <td><%= f.text_field :sku, id: :sku %>
+      <%= link_to "srearch product","#", id: :search_product, class: "search_product" %>
+  </tr>
+
+ <tr>
+    <td><%= f.label :Quantity %>
+    <td><%= f.number_field :quantity, id: :quantity %>
+  </tr>
+
+  <tr>
+    <td><%= f.label :Price %></td>
+    <td><%= f.text_field :price, id: :price ,class: "p_id"%></td>
+  </tr>
+
+ <tr>
+    <td><%= label_tag 'Product id' %></td>
+    <td><%= f.text_field :product_id, id: :product_id %></td>
+  </tr>
+<tr>
+  
+    <td><%= label_tag 'Product_name' %></td>
+    <td><%= text_field_tag :name, "", id: :name %></td>
+ 
+<tr>
+    <td><%= f.check_box :order_id %></td>
+      <td><%= f.label :_destroy, "Remove product" %></td>
+  </tr>
+
+</table>

@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @line_items = @order.line_items
     # @products = Products.all
     # # render '/products'
     # render :template => 'products', :formats => [:html]
@@ -73,6 +74,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:order_no, :is_express_delivery, :is_customer_pickup_boolean, :delivery_date, :order_currency, :order_value, :tracking_no, :special_instruction, :user_id, :address_id)
+      params.require(:order).permit(:order_no, :is_express_delivery, :is_customer_pickup_boolean, :delivery_date, :order_currency, :order_value, :tracking_no, :special_instruction, :user_id, :address_id, line_items_attributes: [:id, :_destroy,:sku, :quantity, :price, :product_id])
     end
 end

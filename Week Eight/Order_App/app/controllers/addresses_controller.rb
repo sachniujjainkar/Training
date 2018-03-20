@@ -59,12 +59,7 @@ class AddressesController < ApplicationController
     end
   end
 
-  # DELETE /addresses/1
-  # DELETE /addresses/1.json
-  user.addresses.find_each(&:destroy)
-  redirect_to user_path(@user)
-    end
-  end
+ 
 
   private
     # Use callbacks to share common setup or constraints between actions.

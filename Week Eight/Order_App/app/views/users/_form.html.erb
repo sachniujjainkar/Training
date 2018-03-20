@@ -1,4 +1,4 @@
-<%= form_for(@user ,:id => '#order_user_id') do |form| %>
+<%= form_for(@user) do |form| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<table align="center" width="50%" height="250px">
+<table  width="50%" height="250px" align="center">
   <tr>
      <td> <%= form.label :first_name %></td>
     <td><%= form.text_field :first_name, id: :user_first_name %></td>
@@ -29,7 +29,7 @@
   </tr>
 
   <tr>
-    <td><%= form.label :email %></td>
+    <td> <font color="red">*</font><%= form.label :email %></td>
     <td><%= form.text_field :email, id: :user_email %></td>
   </tr>
   </table>
@@ -39,7 +39,7 @@
       <% end %>
    
     <div align="center">
-   <%= link_to_add_fields "Add Address", form, :addresses %>
+   <font color="red">*</font><%= link_to_add_fields "Add Address", form, :addresses %>
   </div>
 
 

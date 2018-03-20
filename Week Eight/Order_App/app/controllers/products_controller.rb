@@ -12,6 +12,13 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def get_product_by_sku
+    @product = Product.find_by_sku(params[:id])
+    respond_to do |format|
+     format.json {render json: @product}
+    end
+  end
+
   # GET /products/new
   def new
     @product = Product.new

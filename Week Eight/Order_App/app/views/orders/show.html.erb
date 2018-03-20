@@ -1,54 +1,61 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Order no:</strong>
-  <%= @order.order_no %>
+<dl class="dl-horizontal ">
+  <h2 align="center">Order Details</h2>
+
+
+  <dt>Order no:</dt>
+  <dd><%= @order.order_no %></dd>
+
 </p>
 
 <p>
-  <strong>Is express delivery:</strong>
-  <%= @order.is_express_delivery %>
+  <dt>Is express delivery:</dt>
+  <dd><%= @order.is_express_delivery %></dd>
 </p>
+<hr>
+<p>
+  <dt>Is customer pickup:</dt>
+  <dd><%= @order.is_customer_pickup_boolean %></dd>
+</p>
+<p>
+  <dt>Delivery date:</dt>
+  <dd><%= @order.delivery_date %></dd>
+</p>
+<hr>
+<!-- <p>
+  <dt>Order currency:</dt>
+  <dd><%= @order.order_currency %></dd>
+</p> -->
 
 <p>
-  <strong>Is customer pickup boolean:</strong>
-  <%= @order.is_customer_pickup_boolean %>
+  <dt>Order value:</dt>
+  <dd><%= @order.order_value %></dd>
 </p>
-
+<hr>
 <p>
-  <strong>Delivery date:</strong>
-  <%= @order.delivery_date %>
+  <dt>Tracking no:</dt>
+  <dd><%= @order.tracking_no %></dd>
 </p>
-
+<hr>
 <p>
-  <strong>Order currency:</strong>
-  <%= @order.order_currency %>
+  <dt>Special instruction:</dt>
+  <dd><%= @order.special_instruction %></dd>
 </p>
+<hr>
+<h3 align="center">Line Items</h3>
+ <% @order.line_items.each do |item| %>
+         <dt>Quantity</dt>
+        <dd><%= item.quantity %></dd>
+            
+        <dt>Price:</dt>
+        <dd><%= item.price %></dd>
+              
+        <dt>Product id</dt>
+        <dd><%= item.product_id %></dd>
+        <hr>
+<hr>
+<% end %>
+</dl>
 
-<p>
-  <strong>Order value:</strong>
-  <%= @order.order_value %>
-</p>
-
-<p>
-  <strong>Tracking no:</strong>
-  <%= @order.tracking_no %>
-</p>
-
-<p>
-  <strong>Special instruction:</strong>
-  <%= @order.special_instruction %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back', orders_path, class: "btn btn-info" %>

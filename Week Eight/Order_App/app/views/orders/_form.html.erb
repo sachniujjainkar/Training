@@ -12,18 +12,32 @@
   <% end %>
 
 <script type="text/javascript">
-$(document).on("change", '#customer_id', function() {
+$(document).on("change", '#order_user_id', function() {
   // alert('DJ' );
   var user_id =  this.value;
-  alert(user_id);
+  
   $.ajax({
        url: "/users/"+user_id+"/get_addresses", //+SELLERID,
        type: "GET",
        dataType: "json",
        complete: function() {},
        success: function(data) { 
-         alert(data);
-       }
+        var x = document.getElementById("order_address_id");
+               x.innerHTML = "";
+         for (i = 0; i < data.length; i++) { 
+            
+               var option = document.createElement("option");
+                option.text = data[i]['address_body'];
+                option.value = data[i]['id']
+                x.add(option);
+
+
+          }
+          
+       },
+       error: function() {
+          alert("error in ajax call");
+         }
      });
  });
 
@@ -50,7 +64,10 @@ $(document).on("change", '#customer_id', function() {
     });
 });
 </script>
-<table align="center" width="50%" height="200%" cellspacing="30" >
+
+</script>
+
+<table class = "table" >
 
 <tr>
   <td><%= form.label :Select_user %></td>
@@ -60,7 +77,7 @@ $(document).on("change", '#customer_id', function() {
 
 <tr>
  <td><%= form.label :address_id %>
-<td><%= form.grouped_collection_select :address_id, User.order(:id), :addresses, :id, :id, :address_body, {:prompt => true}, { id: 'order_address_id'} %></td>
+<td><%= form.select :address_id,  {:prompt => true}, { id: 'order_address_id'} %></td>
  </tr>
 <td>
 
@@ -71,24 +88,25 @@ $(document).on("change", '#customer_id', function() {
   <%= form.fields_for(:addresses) do |address| %>
             <tr>
             <td><%= address.label :Address_body %></td>
-            <td><%= address.text_field :address_body , :recityquired => true , id: 1%></td></tr>
+            <td><%= address.text_field :address_body ,  id: 1%></td></tr>
             <tr><td><%= address.label :city %></td>
-            <td><%= address.text_field :city , :required => true , id: 2%></td></tr>
+            <td><%= address.text_field :city  , id: 2 %></td></tr>
             <tr><td><%= address.label :state %></td>
-            <td><%= address.text_field :state , :required => true , id: 3%></td></tr>
+            <td><%= address.text_field :state , id: 3%></td></tr>
             <tr><td><%= address.label :postal_code %></td>
-            <td><%= address.text_field :postal_code , :required => true , id: 4%> </td> </tr> 
+            <td><%= address.text_field :postal_code ,  id: 4%> </td> </tr> 
    <% end %>
    </td>
    </tr>
 
 <tr>
-    <td><%= form.label :order_no %></td>
+      
+    <td><font color="red">*</font><%= form.label :order_no %></td>
     <td><%= form.number_field :order_no, id: :order_order_no %></td>
   </tr>
 
   <tr>
-    <td><%= form.label :is_express_delivery %></td>
+    <td><font color="red">*</font><%= form.label :is_express_delivery %></td>
     <td><%= form.check_box :is_express_delivery, id: :order_is_express_delivery %></td>
   </tr>
 
@@ -98,14 +116,13 @@ $(document).on("change", '#customer_id', function() {
   </tr>
 
   <tr>
-    <td><%= form.label :delivery_date %></td>
-    <td><%= form.date_select :delivery_date, id: :order_delivery_date,:start_year => Date.current.
-    year, :end_year => 1990,:required => true %></td>
+    <td><font color="red">*</font><%= form.label :delivery_date %></td>
+    <td><%= form.date_select :delivery_date, id: :order_delivery_date %></td>
   </tr>
 
   <tr>
-    <td><%= form.label :order_currency %></td>
-    <td><%= form.text_field :order_currency, id: :order_order_currency %></td>
+    <td><font color="red">*</font><%= form.label :order_currency %></td>
+    <td><%= form.select :order_currency, ['euro','dinar', 'dollar','lev' , 'franc', 'pound' ,'krone']%></td>
   </tr>
 
   <tr>
@@ -114,7 +131,7 @@ $(document).on("change", '#customer_id', function() {
   </tr>
 
   <tr>
-    <td><%= form.label :tracking_no %></td>
+    <td><font color="red">*</font><%= form.label :tracking_no %></td>
     <td><%= form.number_field :tracking_no, id: :order_tracking_no %></td>
   </tr>
 
@@ -122,23 +139,19 @@ $(document).on("change", '#customer_id', function() {
     <td><%= form.label :special_instruction %></td>
     <td><%= form.text_area :special_instruction, id: :order_special_instruction %></td>
   </tr>
-
-  <tr>
-    <td><%= form.label :user_id %></td>
-    <td><%= form.text_field :user_id, id: :order_user_id %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :address_id %></td>
-    <td><%= form.text_field :address_id, id: :order_address_id %></td>
-  </tr>
 <tr>
-  <tr>
-    <td><%= link_to 'Add Line Item', products_path %></td>
+    <td>
+      <h3 align="center"><font color="red">*</font> Add Products</h3>
+      </td>
   </tr>
+
+      <tr>
+        <td><label for="Add Products"> Search product by name</td>
+        <td><%= link_to_add_fields "product", form , "line_items" %></td>
+  </tr>
+  <tr> 
 <td>
     <%= form.submit %></td>
-  
   </tr>
 
 </table>

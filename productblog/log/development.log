@@ -65283,3 +65283,1493 @@ Completed 200 OK in 253ms (Views: 233.7ms | ActiveRecord: 0.2ms)
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 4)[0m
   [1m[36mLineitem Load (0.3ms)[0m  [1m[34mSELECT "lineitems".* FROM "lineitems" WHERE "lineitems"."order_id" IN (1, 2, 4, 5, 6)[0m
   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (4, 3, 2, 1)[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mAddress Exists (11.4ms)[0m  [1m[34mSELECT  1 AS one FROM "addresses" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  [1m[36mProduct Exists (8.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (NULL, NULL)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (NULL, NULL)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3, 4)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3, 4)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3, 4)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (2, 3)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (2, 3)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+Started GET "/" for 127.0.0.1 at 2018-03-20 10:49:59 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2639ms (Views: 2574.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-03-20 10:50:03 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2018-03-20 10:50:05 +0530
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered products/index.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 355ms (Views: 328.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-20 10:50:08 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 254ms (Views: 236.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 10:50:10 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (4.2ms)
+  Rendered orders/_form.html.erb (144.3ms)
+  Rendered orders/new.html.erb within layouts/application (154.9ms)
+Completed 200 OK in 461ms (Views: 394.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-03-20 10:50:20 +0530
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered products/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 257ms (Views: 253.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-20 10:57:52 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 535ms (Views: 523.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-03-20 11:09:34 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 579ms (Views: 566.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-20 11:09:38 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 264ms (Views: 246.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 11:09:39 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.4ms)
+  Rendered orders/_form.html.erb (26.8ms)
+  Rendered orders/new.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 290ms (Views: 277.8ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Exists (10.4ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."locked" = ? LIMIT ?[0m  [["locked", "t"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."orders_count" IN (1, 2, 3) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_id" IN (1, 2, 3) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_id" IN (1, 2) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "Neha"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ?[0m  [["first_name", "Neha"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."first_name" = ? ORDER BY "users"."id" DESC LIMIT ?[0m  [["first_name", "Neha"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."sku" = ? LIMIT ?[0m  [["sku", "T1"], ["LIMIT", 1]]
+  [1m[36mOrder Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 4)[0m
+  [1m[36mLineitem Load (0.2ms)[0m  [1m[34mSELECT "lineitems".* FROM "lineitems" WHERE "lineitems"."order_id" IN (1, 2, 4, 5, 6)[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (4, 3, 2, 1)[0m
+  [1m[36mOrder Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."id" IN (SELECT "lineitems"."order_id" FROM "lineitems" WHERE "lineitems"."product_id" IN (SELECT "products"."id" FROM "products" WHERE "products"."sku" IN ('p2', 'b1', 'PC1'))) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."id" IN (SELECT "lineitems"."order_id" FROM "lineitems" WHERE "lineitems"."product_id" IN (SELECT "products"."id" FROM "products" WHERE "products"."sku" IN ('T1', 'P01', 'M01'))) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" IN (SELECT "lineitems"."order_id" FROM "lineitems" WHERE "lineitems"."product_id" IN (SELECT "products"."id" FROM "products" WHERE "products"."sku" IN ('T1', 'P01', 'M01')))[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."first_name" FROM "users"[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users"."first_name", "users"."last_name" FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "name" FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "name" FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users"."first_name" FROM "users"[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mOrder Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT delivery_date(created_at) FROM "orders"[0m
+  [1m[36mAddress Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "addresses" WHERE (id > 5) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE (id > 5)[0m
+  [1m[36mAddress Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "addresses" WHERE (id > 5) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE (id > 5) LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE (id > 5) LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mAddress Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "addresses" WHERE (id > 5) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE (id > 5) ORDER BY id asc LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mAddress Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "addresses" WHERE (id > 5) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE (id > 5) LIMIT ?[0m  [["LIMIT", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE (category_id IN ('Rock')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE (category_id IN (1)) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category_id IN (1))[0m
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE (category_id IN (2)) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE (category_id IN (2)) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE (category_id IN (1)) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category_id IN (1))[0m
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE (category_id IN (1)) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category_id IN (1))[0m
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."sku" IN ('T1', 'P01') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."sku" IN ('T1', 'P01')[0m
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."sku" IN ('T1', 'P01') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."sku" IN ('T1', 'P01')[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."sku" IN ('T1', 'P01') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."sku" IN ('T1', 'P01', 'M01', 'T01') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."sku" IN ('T1', 'P01', 'M01', 'T01')[0m
+  [1m[36mOrder Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."sku" = 'T1' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."sku" = 'T01' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."sku" = 'P01' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."sku" IN ('T1', 'P01')[0m
+  [1m[36mLineitem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lineitems" WHERE "lineitems"."sku" IN ('T1', 'P01') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLineitem Load (0.2ms)[0m  [1m[34mSELECT "lineitems".* FROM "lineitems" WHERE "lineitems"."sku" IN ('T1', 'P01')[0m
+  [1m[36mLineitem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lineitems" WHERE "lineitems"."sku" IN ('T1', 'P01') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLineitem Load (0.3ms)[0m  [1m[34mSELECT "lineitems".* FROM "lineitems" WHERE "lineitems"."sku" IN ('T1', 'P01')[0m
+  [1m[36mLineitem Load (0.4ms)[0m  [1m[34mSELECT "lineitems".* FROM "lineitems" WHERE "lineitems"."sku" IN ('T01', 'M01')[0m
+  [1m[36mLineitem Load (0.4ms)[0m  [1m[34mSELECT "lineitems".* FROM "lineitems" WHERE "lineitems"."sku" IN ('T01', 'M01')[0m
+  [1m[36mLineitem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lineitems" WHERE "lineitems"."sku" IN ('T01', 'M01') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLineitem Load (0.3ms)[0m  [1m[34mSELECT "lineitems".* FROM "lineitems" WHERE "lineitems"."sku" IN ('T01', 'M01')[0m
+  [1m[36mLineitem Load (0.4ms)[0m  [1m[34mSELECT  "lineitems".* FROM "lineitems" WHERE "lineitems"."sku" IN ('T01', 'M01') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mLineitem Load (0.3ms)[0m  [1m[34mSELECT  "lineitems".* FROM "lineitems" WHERE "lineitems"."sku" IN ('T01', 'M01') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mLineitem Load (0.4ms)[0m  [1m[34mSELECT  "lineitems".* FROM "lineitems" WHERE "lineitems"."sku" IN ('T01', 'M01') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."city" = ? AND "addresses"."state" = ? LIMIT ?[0m  [["city", "Pune"], ["state", "Maharashtra"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."dob" = ?[0m  [["dob", 1994]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."dob" = ?[0m  [["dob", 1995]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."dob" = ?[0m  [["dob", 1996]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."dob" = ?[0m  [["dob", 1997]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."dob" = ?[0m  [["dob", 1998]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."dob" = ?[0m  [["dob", 1999]]
+  [1m[36mAddress Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "addresses" WHERE "addresses"."state" = ? LIMIT ?[0m  [["state", "Maharashtra"], ["LIMIT", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."state" = ?[0m  [["state", "Maharashtra"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "addresses" WHERE "addresses"."state" = ?[0m  [["state", "Maharashtra"]]
+Started GET "/" for 127.0.0.1 at 2018-03-20 18:33:55 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4113ms (Views: 3973.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:34:01 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (4.8ms)
+  Rendered orders/_form.html.erb (186.9ms)
+  Rendered orders/new.html.erb within layouts/application (267.6ms)
+Completed 200 OK in 583ms (Views: 516.1ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:34:11 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (8.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 6.7ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:34:42 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.4ms)
+  Rendered orders/_form.html.erb (22.6ms)
+  Rendered orders/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 269ms (Views: 265.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:34:48 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:37:25 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (22.7ms)
+  Rendered orders/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 266ms (Views: 263.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:37:32 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-20 18:38:24 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 251ms (Views: 248.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:38:26 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.1ms)
+  Rendered orders/_form.html.erb (25.7ms)
+  Rendered orders/new.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 273ms (Views: 269.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:38:32 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:39:38 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.4ms)
+  Rendered orders/_form.html.erb (25.4ms)
+  Rendered orders/new.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 1189ms (Views: 1165.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:39:48 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:40:08 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.9ms)
+  Rendered orders/_form.html.erb (22.1ms)
+  Rendered orders/new.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 1284ms (Views: 1274.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:40:15 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:41:01 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (23.0ms)
+  Rendered orders/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 265ms (Views: 261.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:41:08 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:42:13 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (23.6ms)
+  Rendered orders/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 266ms (Views: 262.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:42:20 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:42:55 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (29.3ms)
+  Rendered orders/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 334ms (Views: 330.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:43:01 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:43:36 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (22.3ms)
+  Rendered orders/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 540ms (Views: 530.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:43:42 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-20 18:44:09 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 574ms (Views: 562.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:44:11 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.4ms)
+  Rendered orders/_form.html.erb (30.7ms)
+  Rendered orders/new.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 290ms (Views: 276.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:44:17 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:44:53 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.1ms)
+  Rendered orders/_form.html.erb (29.3ms)
+  Rendered orders/new.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 335ms (Views: 332.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:44:59 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:49:56 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (22.3ms)
+  Rendered orders/new.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 273ms (Views: 270.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:50:02 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:51:35 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (22.4ms)
+  Rendered orders/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 273ms (Views: 270.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:51:41 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:52:10 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (21.8ms)
+  Rendered orders/new.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 266ms (Views: 262.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:52:16 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-20 18:52:57 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 248ms (Views: 246.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:52:58 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.8ms)
+  Rendered orders/_form.html.erb (26.3ms)
+  Rendered orders/new.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 338ms (Views: 334.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:53:04 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:53:59 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (22.5ms)
+  Rendered orders/new.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 266ms (Views: 262.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:54:06 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:55:11 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.0ms)
+  Rendered orders/_form.html.erb (22.2ms)
+  Rendered orders/new.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 267ms (Views: 263.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:55:17 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:56:31 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.0ms)
+  Rendered orders/_form.html.erb (22.1ms)
+  Rendered orders/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 269ms (Views: 265.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:56:38 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 18:58:58 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (22.2ms)
+  Rendered orders/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 267ms (Views: 263.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 18:59:05 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:01:55 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (22.0ms)
+  Rendered orders/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 333ms (Views: 329.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:02:03 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:02:36 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.4ms)
+  Rendered orders/_form.html.erb (23.7ms)
+  Rendered orders/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 268ms (Views: 264.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:02:44 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:08:07 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.0ms)
+  Rendered orders/_form.html.erb (31.3ms)
+  Rendered orders/new.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 895ms (Views: 861.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:08:22 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:08:47 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.1ms)
+  Rendered orders/_form.html.erb (31.8ms)
+  Rendered orders/new.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 384ms (Views: 380.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:09:20 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:09:34 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (29.6ms)
+  Rendered orders/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 264ms (Views: 261.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:09:41 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:14:25 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.0ms)
+  Rendered orders/_form.html.erb (31.6ms)
+  Rendered orders/new.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 891ms (Views: 858.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:14:33 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:18:24 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.5ms)
+  Rendered orders/_form.html.erb (24.1ms)
+  Rendered orders/new.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 294ms (Views: 290.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:18:34 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:19:32 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (22.6ms)
+  Rendered orders/new.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 268ms (Views: 264.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:19:43 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:22:44 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.1ms)
+  Rendered orders/_form.html.erb (29.0ms)
+  Rendered orders/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 294ms (Views: 291.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:22:51 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:23:44 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.5ms)
+  Rendered orders/_form.html.erb (23.6ms)
+  Rendered orders/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 263ms (Views: 260.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:24:12 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:25:12 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.9ms)
+  Rendered orders/_form.html.erb (23.8ms)
+  Rendered orders/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 287ms (Views: 283.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:25:20 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/get_product?search=tshirt" for 127.0.0.1 at 2018-03-20 19:26:03 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tshirt"}
+  [1m[36mProduct Load (15.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tshirt%' OR sku LIKE '%tshirt%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.7ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:27:38 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.9ms)
+  Rendered orders/_form.html.erb (23.5ms)
+  Rendered orders/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 322ms (Views: 319.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:27:48 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:28:26 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.1ms)
+  Rendered orders/_form.html.erb (22.6ms)
+  Rendered orders/new.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 284ms (Views: 281.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:28:32 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:32:41 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.1ms)
+  Rendered orders/_form.html.erb (22.0ms)
+  Rendered orders/new.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 823ms (Views: 813.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:32:49 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:33:54 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (27.9ms)
+  Rendered orders/new.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 276ms (Views: 273.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:34:00 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/get_product?search=tshirt" for 127.0.0.1 at 2018-03-20 19:34:25 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tshirt"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tshirt%' OR sku LIKE '%tshirt%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:35:25 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.5ms)
+  Rendered orders/_form.html.erb (25.4ms)
+  Rendered orders/new.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 1160ms (Views: 1138.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/get_product?search=tshirt" for 127.0.0.1 at 2018-03-20 19:35:34 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tshirt"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tshirt%' OR sku LIKE '%tshirt%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/get_product?search=ted" for 127.0.0.1 at 2018-03-20 19:35:52 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"ted"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%ted%' OR sku LIKE '%ted%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:37:39 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.9ms)
+  Rendered orders/_form.html.erb (21.7ms)
+  Rendered orders/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 270ms (Views: 267.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:41:21 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.3ms)
+  Rendered orders/_form.html.erb (22.5ms)
+  Rendered orders/new.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 348ms (Views: 345.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:41:28 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:41:54 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.9ms)
+  Rendered orders/_form.html.erb (22.5ms)
+  Rendered orders/new.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 288ms (Views: 284.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:42:01 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:43:12 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.1ms)
+  Rendered orders/_form.html.erb (22.7ms)
+  Rendered orders/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 345ms (Views: 341.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:43:18 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:44:08 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.1ms)
+  Rendered orders/_form.html.erb (24.1ms)
+  Rendered orders/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 266ms (Views: 262.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:44:13 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:44:56 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.4ms)
+  Rendered orders/_form.html.erb (22.9ms)
+  Rendered orders/new.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 269ms (Views: 265.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:45:02 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:46:07 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (21.5ms)
+  Rendered orders/new.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 273ms (Views: 269.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:46:12 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:46:39 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (5.3ms)
+  Rendered orders/_form.html.erb (41.6ms)
+  Rendered orders/new.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 327ms (Views: 322.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:46:43 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:47:19 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (23.0ms)
+  Rendered orders/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 264ms (Views: 260.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/get_product?search=ted" for 127.0.0.1 at 2018-03-20 19:47:24 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"ted"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%ted%' OR sku LIKE '%ted%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:47:43 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (22.9ms)
+  Rendered orders/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 277ms (Views: 273.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:47:53 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:48:14 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.8ms)
+  Rendered orders/_form.html.erb (21.9ms)
+  Rendered orders/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 352ms (Views: 349.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/get_product?search=ted" for 127.0.0.1 at 2018-03-20 19:48:19 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"ted"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%ted%' OR sku LIKE '%ted%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:48:38 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.2ms)
+  Rendered orders/_form.html.erb (23.3ms)
+  Rendered orders/new.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 277ms (Views: 274.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=teddy" for 127.0.0.1 at 2018-03-20 19:48:44 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"teddy"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%teddy%' OR sku LIKE '%teddy%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:50:14 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.3ms)
+  Rendered orders/_form.html.erb (23.1ms)
+  Rendered orders/new.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 275ms (Views: 272.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:50:19 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:51:10 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.5ms)
+  Rendered orders/_form.html.erb (24.4ms)
+  Rendered orders/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 328ms (Views: 325.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:51:18 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/get_product?search=tshirt" for 127.0.0.1 at 2018-03-20 19:51:59 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tshirt"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tshirt%' OR sku LIKE '%tshirt%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:54:31 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.9ms)
+  Rendered orders/_form.html.erb (22.0ms)
+  Rendered orders/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 950ms (Views: 933.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:54:39 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/get_product?search=tshir" for 127.0.0.1 at 2018-03-20 19:54:53 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tshir"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tshir%' OR sku LIKE '%tshir%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:55:04 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (3.4ms)
+  Rendered orders/_form.html.erb (23.7ms)
+  Rendered orders/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 273ms (Views: 269.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:55:11 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2018-03-20 19:55:16 +0530
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered orders/_lineitem_fields.html.erb (2.9ms)
+  Rendered orders/_form.html.erb (22.3ms)
+  Rendered orders/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 270ms (Views: 266.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/get_product?search=tedd" for 127.0.0.1 at 2018-03-20 19:55:21 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tedd"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tedd%' OR sku LIKE '%tedd%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/get_product?search=tshirt" for 127.0.0.1 at 2018-03-20 19:55:34 +0530
+Processing by ProductsController#get_product as */*
+  Parameters: {"search"=>"tshirt"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (name LIKE '%tshirt%' OR sku LIKE '%tshirt%') ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+

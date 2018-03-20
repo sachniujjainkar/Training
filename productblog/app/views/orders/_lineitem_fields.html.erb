@@ -52,7 +52,7 @@
                             <%= f.label "Quantity" %>
                       </div>
                       <div class="col-md-6 col-md-pull-2">
-                          <%= f.number_field :quantity , class: "qty", :required => true%>
+                          <%= f.number_field :quantity , class: "qty", value: 0 ,:required => true%>
                       </div>
                   </div>
                 
@@ -163,19 +163,30 @@
     var order_price
     var product_price
       $(".qty").click(function(){
+          product_price = 0
+          //privious_quantity = 0
           privious_quantity = $(this).val()
+          //alert(privious_quantity);
           order_price = $("#order_order_value").val()
+          //alert(order_price);
           product_price = $(this).closest('.total').find('.price').val()    
           //alert(order_price);    
       });
       $(".qty").focusout(function(){
+          //alert("focus out");
+          new_quantity = 0
           new_quantity = $(this).val()
-          order_price = order_price - (privious_quantity * product_price)
-          alert(new_quantity);
-          //alert(previous_price);
-          alert(product_price);
-          order_price = order_price + (new_quantity * product_price)
+           //alert(new_quantity);
+          //alert(privious_quantity);
+          order_price = (parseInt(order_price) - (parseInt(privious_quantity) * product_price))
+         
           //alert(order_price);
+          //alert(product_price);
+          order_price = (parseInt(order_price) + (new_quantity * product_price))
+          //alert("previ");
+          //alert(privious_quantity);
+          //alert(order_price);
+          //$("#order_order_value").val("")
           $("#order_order_value").val(order_price) 
           event.preventDefault()
       });
@@ -184,10 +195,37 @@
 
 
 </script>    
+
+<script>
+
+// $(document).ready(function(){
+//    var privious_quantity
+//    var order_price
+//    var product_price
+//      $("#quantity").click(function(){
+//      //  alert( "Hello");
+//          privious_quantity = $(this).val()
+//        //  alert(privious_quantity);
+//          order_price = $("#order_order_value").val()
+//          //alert( order_price);
+
+//          product_price = $(this).closest('table').find('.item_price').val()
+//          //  alert( product_price);
+//      });
+//      $(".item_quantity").focusout(function(){
+//        alert("in focus out")
+//          new_quantity = $(this).val()
+//          order_price = order_price - (privious_quantity * product_price)
+//          alert(new_quantity)
+//          order_price = order_price + (new_quantity * product_price)
+//          $("#order_order_value").val(order_price)
+//          event.preventDefault()
+//      });
+//  });
         
 
 
-
+</script>
 
 
 

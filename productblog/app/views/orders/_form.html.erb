@@ -181,7 +181,7 @@
     <%= f.label :order_value, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%#= order_value=@total_price %>
-      <%= f.number_field :order_value, class: "form-control" %>
+      <%= f.number_field :order_value, id: "order_order_value" , value: 0 ,class: "form-control" %>
     </div>
   </div>
 </div>
@@ -255,7 +255,6 @@ $(document).on("click", '#search-btn', function(){
                       $(".name:last").val(data['name']);
                       $(".sku:last").val(data['sku']);
                       $(".pid:last").val(data['product_id']);
-                      $(".qty:last").val(1);
                       $(".price:last").val(data['price']);
 
                       // $(".pname:last").val(data['name']);

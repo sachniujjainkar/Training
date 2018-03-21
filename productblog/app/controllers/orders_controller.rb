@@ -11,12 +11,22 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
   def show
     @order = Order.find(params[:id])
-        #@li = @order.lineitems
-
+       
     
     respond_to do |format|
+
       format.html # show.html.erb
       format.json { render json: @order }
+
+      format.pdf do
+        pdf = OrderPdf.new(@order)
+        #pdf.text 'Hello World'
+
+        send_data pdf.render,
+          filename: "order_#{@order.order_no}",
+          type: 'application/pdf',
+          disposition: 'inline'
+      end
     end
   end
 

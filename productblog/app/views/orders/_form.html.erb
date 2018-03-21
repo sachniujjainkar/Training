@@ -235,7 +235,6 @@
 
 <script type="text/javascript">
 $(document).on("click", '#search-btn', function(){
-      //alert("You clicked the element with and ID of 'search-form'");
       var search = $('#search').val()
         $.ajax({
                   url: "/products/get_product",
@@ -243,23 +242,14 @@ $(document).on("click", '#search-btn', function(){
                     search: search
                   },
                  type: "GET",
-             // datatype: "json",
-
+           
              complete: function() {},
               success: function(data) {
-                //alert(data['sku']);
-
-                      // $('#sku').val(data['sku']);
-                      // $('#8').val(data['price']);
-                      //$('#name').val(data['pname']);
+                
                       $(".name:last").val(data['name']);
                       $(".sku:last").val(data['sku']);
                       $(".pid:last").val(data['product_id']);
                       $(".price:last").val(data['price']);
-
-                      // $(".pname:last").val(data['name']);
-                      
-
                     },
                 error: function() {
                   alert("Ajax error!")

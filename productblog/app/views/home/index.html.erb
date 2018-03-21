@@ -5,5 +5,28 @@
 
 
 
+<table class="container">
+
+	
+
+<% @orders.each do |order| %>
+<tr>
+<td><%= link_to order.order_no, order %></td>
+
+
+</tr>
+	<%# if current_user.id == post.user_id %><!-- 
+<td>Created By: <%#= post.try(:user).try(:username) %></td>
+ --><%# end %>
+
+
+<% end %>
+
+          
+
+
+</table>
+
+
 
   

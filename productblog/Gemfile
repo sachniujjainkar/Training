@@ -48,6 +48,11 @@ gem 'bootstrap-form'
 
 gem 'jquery-ui-rails'
 
+gem 'prawn'
+
+gem 'responders'
+
+gem 'prawn-table'
 
 gem 'bootstrap-glyphicons'
 

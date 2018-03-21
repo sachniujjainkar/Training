@@ -13,9 +13,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   # GET /addresses/1.json
   def show
-          #@product = Product.find(params[:id])
           @product = Product.find(params[:id])
-    ap 'log'
+    #ap 'log'
     respond_to do |format|
         format.json { render json: @product}   
         format.html #{redirect_to @product}
@@ -37,13 +36,6 @@ class ProductsController < ApplicationController
     end
   end
 
-#   def product_details
-#  @product = Product.find_by_sku(params[:sku])
-#   respond_to do |format|
-# format.html # show.html.erb
-# format.json { render json: @product }
-# end
-# end
 
   # GET /products/new
   def new

@@ -13,8 +13,7 @@
 <!-- <div class="panel panel-default">
  --><dl class="dl-horizontal">
 <h4>Users Details</h4>
-  <%# @order.addresses.each do |address| %>
-  
+ 
     <dt>First Name:</dt>
     <dd><%= @order.user.first_name %></dd>
 
@@ -32,7 +31,6 @@
 
   <dl class="dl-horizontal">
 <h4>Shipping Address</h4>
-  <%# @order.addresses.each do |address| %>
   
     <dt>Line 1:</dt>
     <dd><%= @order.address.line_1 %></dd>
@@ -56,8 +54,7 @@
     <dd><%= @order.address.postal_code %></dd>
     
   </dl>
-<!-- </div>
- -->
+
 
 <dl class="dl-horizontal">
   <h4>Order Details</h4>
@@ -83,16 +80,10 @@
   <dd><%= @order.special_instruction %></dd>
 
   <dt>Order value:</dt>
-  <%#= @ordre.total %>
   <dd><%= @order.order_value %></dd>
 
  
-
-
- 
-
-
- <h3 align="center">Line Items</h3>
+<h3 align="center">Line Items</h3>
  <% @order.lineitems.each do |item| %>
    <dl>
    <dt>
@@ -110,9 +101,10 @@
        <dt><strong>Product id</strong></dt>
        <dd><%= item.product_id %><dd>
 
-       
-
-
-   
 <% end %>
+
+<br /><br />
+<p>
+  <%= link_to "Printable Receipt (PDF)", order_path(@order, format: 'pdf') %>
+</p>
 

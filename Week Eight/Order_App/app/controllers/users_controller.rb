@@ -11,6 +11,9 @@ class UsersController < ApplicationController
 
   respond_to do |format|
    format.json {render json: @addresses}
+   format.html {
+
+   }
   end
 
  end
@@ -21,13 +24,14 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
   end
 
   # GET /users/new
   def new
     @user = User.new
-    # @address = @user.addresses.build 
-    
+    # @address = @user.addresses.build
+
   end
 
   # GET /users/1/edit

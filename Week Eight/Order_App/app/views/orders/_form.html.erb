@@ -2,7 +2,6 @@
   <% if order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
-
       <ul>
       <% order.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,62 +9,7 @@
       </ul>
     </tr>
   <% end %>
-
-<script type="text/javascript">
-$(document).on("change", '#order_user_id', function() {
-  // alert('DJ' );
-  var user_id =  this.value;
-  
-  $.ajax({
-       url: "/users/"+user_id+"/get_addresses", //+SELLERID,
-       type: "GET",
-       dataType: "json",
-       complete: function() {},
-       success: function(data) { 
-        var x = document.getElementById("order_address_id");
-               x.innerHTML = "";
-         for (i = 0; i < data.length; i++) { 
-            
-               var option = document.createElement("option");
-                option.text = data[i]['address_body'];
-                option.value = data[i]['id']
-                x.add(option);
-
-
-          }
-          
-       },
-       error: function() {
-          alert("error in ajax call");
-         }
-     });
- });
-
-</script>
-<script type="text/javascript">
-  $(document).on("change", '#order_address_id', function() {
-  var add = $('#order_address_id :selected').val()
-    $.ajax({
-                 url: "/addresses/" + add, // Route to the Script Controller method
-                type: "GET",
-            dataType: "json",
-                
-            complete: function() {},
-             success: function(data) { 
-                      
-                       $('#1').val(data['address_body']);
-                       $('#2').val(data['city']);
-                       $('#3').val(data['state']);
-                       $('#4').val(data['postal_code']);
-                     },
-               error: function() {
-                        alert("Ajax error!")
-                      }
-    });
-});
-</script>
-
-</script>
+<%= javascript_include_tag 'orders' %>
 
 <table class = "table" >
 
@@ -80,9 +24,6 @@ $(document).on("change", '#order_user_id', function() {
 <td><%= form.select :address_id,  {:prompt => true}, { id: 'order_address_id'} %></td>
  </tr>
 <td>
-
-
-  
 <tr>
 
   <%= form.fields_for(:addresses) do |address| %>
@@ -94,19 +35,19 @@ $(document).on("change", '#order_user_id', function() {
             <tr><td><%= address.label :state %></td>
             <td><%= address.text_field :state , id: 3%></td></tr>
             <tr><td><%= address.label :postal_code %></td>
-            <td><%= address.text_field :postal_code ,  id: 4%> </td> </tr> 
+            <td><%= address.text_field :postal_code ,  id: 4%> </td> </tr>
    <% end %>
    </td>
    </tr>
 
 <tr>
-      
+
     <td><font color="red">*</font><%= form.label :order_no %></td>
-    <td><%= form.number_field :order_no, id: :order_order_no %></td>
+    <td><%= form.number_field :order_no, id: :order_order_no, value: "ORD-#{1}" %></td>
   </tr>
 
   <tr>
-    <td><font color="red">*</font><%= form.label :is_express_delivery %></td>
+    <td><font color="red"></font><%= form.label :is_express_delivery %></td>
     <td><%= form.check_box :is_express_delivery, id: :order_is_express_delivery %></td>
   </tr>
 
@@ -127,7 +68,7 @@ $(document).on("change", '#order_user_id', function() {
 
   <tr>
     <td><%= form.label :order_value %></td>
-    <td><%= form.text_field :order_value, id: :order_order_value %></td>
+    <td><%= form.text_field :order_value, id: :order_order_value ,value: 0 %></td>
   </tr>
 
   <tr>
@@ -149,7 +90,7 @@ $(document).on("change", '#order_user_id', function() {
         <td><label for="Add Products"> Search product by name</td>
         <td><%= link_to_add_fields "product", form , "line_items" %></td>
   </tr>
-  <tr> 
+  <tr>
 <td>
     <%= form.submit %></td>
   </tr>

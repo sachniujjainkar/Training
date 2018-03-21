@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>:quantity</strong>
+  <%= line_item.quantity %>
+</p>
+
+<p>
+  <strong> price:</strong>
+  <%= line_item.price %>
+</p>
+
+<p>
+  <strong>product_id:</strong>
+  <%= line_item.product_id %>
+</p>
+
+<p>
+  <strong>order_id:</strong>
+  <%= line_item.order_id %>
+</p>
+<p><%= line_item.quantity * line_item.product.price %></p>

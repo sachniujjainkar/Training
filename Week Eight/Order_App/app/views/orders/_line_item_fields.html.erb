@@ -54,10 +54,10 @@
           //  alert( product_price);
       });
       $(".item_quantity").focusout(function(){
-        alert("in focus out")
+        // alert("in focus out")
           new_quantity = $(this).val()
           order_price = order_price - (privious_quantity * product_price)
-          alert(new_quantity)
+          // alert(new_quantity)
           order_price = order_price + (new_quantity * product_price)
           $("#order_order_value").val(order_price)
           event.preventDefault()
@@ -77,7 +77,7 @@
 
  <tr>
     <td><%= label_tag "Product Quantity" %>
-    <td><%= f.number_field :quantity, id: :quantity, value: 0, class: "item_quantity" %>
+    <td><%= f.text_field :quantity, id: :quantity, value: 0, class: "item_quantity" %>
   </tr>
 
   <tr>
@@ -98,5 +98,5 @@
     <td><%= f.check_box :order_id %></td>
       <td><%= f.label :_destroy, "Remove product" %></td>
   </tr>
-
+  line_item.quantity * line_item.product.price
 </table>

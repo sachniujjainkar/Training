@@ -47,10 +47,10 @@
  <% @order.line_items.each do |item| %>
          <dt>Quantity</dt>
         <dd><%= item.quantity %></dd>
-            
+
         <dt>Price:</dt>
         <dd><%= item.price %></dd>
-              
+
         <dt>Product id</dt>
         <dd><%= item.product_id %></dd>
         <hr>
@@ -59,3 +59,6 @@
 </dl>
 
 <%= link_to 'Back', orders_path, class: "btn btn-info" %>
+<p>
+  <%= link_to "Printable Receipt (PDF)", order_path(@order, format: 'pdf') %>
+</p>

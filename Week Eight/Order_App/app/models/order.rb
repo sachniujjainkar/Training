@@ -12,4 +12,7 @@ validates :tracking_no, presence: true
 
 scope :visible, -> { where(:is_express_delivery => true) }
 
+scope :created_before, -> (start, end_date) {where('created_at BETWEEN ? AND ?', start.beginning_of_day, end_date.end_of_day)}
+
+
 end

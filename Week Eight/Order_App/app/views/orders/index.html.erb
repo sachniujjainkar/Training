@@ -34,14 +34,12 @@
         <td><%= order.user.first_name %></td>
         <td><%= order.address.address_body %></td>
         <td><%= order.address.city %></td>
-        <td><%= link_to 'Show', order, class: "btn btn-info" %></td>
-       
-        <td><%= link_to 'Destroy', order,class: "btn btn-info", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', order, class: "btn btn-info" ,class:"glyphicon glyphicon-search"%></td>
+
+        <td><%= link_to 'Destroy', order,class: "btn btn-info", method: :delete, class: "glyphicon glyphicon-remove",data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-

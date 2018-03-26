@@ -58,9 +58,9 @@ $(document).ready(function(){
 <%= image_tag product.prduct_image, :size => "60x50", class: "img-responsive" %>
 </td>
 
-       <td><%= link_to 'Show', product , class: "btn btn-info"%></td>
-        <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-info" %></td>
-        <td><%= link_to 'Destroy', product, class: "btn btn-info",method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><%= link_to 'Show', product , class: "btn btn-info",class:"glyphicon glyphicon-search"%></td>
+        <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-info" ,class: "glyphicon glyphicon-pencil"%></td>
+        <td><%= link_to 'Destroy', product, class: "btn btn-info",method: :delete, class: "glyphicon glyphicon-remove",data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

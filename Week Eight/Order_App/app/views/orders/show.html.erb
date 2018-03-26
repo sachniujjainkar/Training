@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', orders_path, class: "btn btn-info" ,class: "glyphicon glyphicon-circle-arrow-left"%>
 
+<p id="notice"><%= notice %></p>
 <dl class="dl-horizontal ">
   <h2 align="center">Order Details</h2>
-
-
   <dt>Order no:</dt>
   <dd><%= @order.order_no %></dd>
-
 </p>
-
 <p>
   <dt>Is express delivery:</dt>
   <dd><%= @order.is_express_delivery %></dd>
@@ -58,7 +55,6 @@
 <% end %>
 </dl>
 
-<%= link_to 'Back', orders_path, class: "btn btn-info" %>
-<p>
-  <%= link_to "Printable Receipt (PDF)", order_path(@order, format: 'pdf') %>
+<p align= "left" >
+  <%= link_to "Printable Receipt (PDF)", order_path(@order, format: 'pdf')  ,class:"glyphicon glyphicon-save"%>
 </p>

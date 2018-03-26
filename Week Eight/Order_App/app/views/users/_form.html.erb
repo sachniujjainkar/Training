@@ -33,11 +33,11 @@
     <td><%= form.text_field :email, id: :user_email %></td>
   </tr>
   </table>
- 
+
       <%= form.fields_for(:addresses) do |builder| %>
       <%= render 'address_fields', :f => builder %>
       <% end %>
-   
+
     <div align="center">
    <font color="red">*</font><%= link_to_add_fields "Add Address", form, :addresses %>
   </div>

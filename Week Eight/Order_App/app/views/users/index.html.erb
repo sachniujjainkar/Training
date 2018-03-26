@@ -20,14 +20,12 @@
         <td><%= user.last_name %></td>
         <td><%= user.dob %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user ,class: "btn btn-info"%></td>
-        <td><%= link_to 'Edit', edit_user_path(user),class: "btn btn-info" %></td>
-        <td><%= link_to 'Destroy', user,class: "btn btn-info", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user ,class: "btn btn-info",class:"glyphicon glyphicon-search"%></td>
+        <td><%= link_to 'Edit', edit_user_path(user),class: "btn btn-info",class: "glyphicon glyphicon-pencil" %></td>
+        <td><%= link_to 'Destroy', user,class: "btn btn-info" , method: :delete, class: "glyphicon glyphicon-remove", data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-

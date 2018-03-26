@@ -10,4 +10,6 @@ validates :delivery_date, presence: true
 validates :order_currency, presence: true
 validates :tracking_no, presence: true
 
+scope :visible, -> { where(:is_express_delivery => true) }
+
 end

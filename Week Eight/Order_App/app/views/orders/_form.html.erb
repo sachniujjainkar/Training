@@ -43,7 +43,7 @@
 <tr>
 
     <td><font color="red">*</font><%= form.label :order_no %></td>
-    <td><%= form.number_field :order_no, id: :order_order_no, value: "ORD-#{1}" %></td>
+    <td><%= form.text_field :order_no, id: :order_order_no,:value => "Ord-#{Order.last.id + 1}" %></td>
   </tr>
 
   <tr>

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :orders
   resources :addresses
-  resources :users
+  resources :users do
+    member do
+      get 'get_addresses'
+    end
+  end
   resources :products do
   	member do
     	get :get_product_by_sku

@@ -1,49 +1,80 @@
 <p id="notice"><%= notice %></p>
+<h2>Order</h2>
+<hr>
+<%= link_to 'Create Invoice', order_path(@order, format: "pdf"), class: "btn btn-sm btn-success" %>
 
-<p>
-  <strong>Order no:</strong>
-  <%= @order.order_no %>
-</p>
+<%= link_to 'Back', orders_path, class: "btn btn-sm btn-info" %>
+<hr>
 
-<p>
-  <strong>Is express delivery:</strong>
-  <%= @order.is_express_delivery %>
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <strong>User:</strong>
+    <%=@order.user.first_name + " " + @order.user.last_name %>
+  </div>
 
-<p>
-  <strong>Is custommer pickup:</strong>
-  <%= @order.is_custommer_Pickup %>
-</p>
+  <div class="col-md-6">
+    <strong>Address:</strong>
+    <%= @order.address.line1 %>, <%= @order.address.line2 %>, <%= @order.address.line3 %>, <%= @order.address.city %>, <%= @order.address.state %>, <%= @order.address.country %>, <%= @order.address.postal_code %>,<br> Contact info.- <%= @order.address.contact_no %>, <%= @order.address.email %>
+  </div> 
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <strong>Order no:</strong>
+    <%= @order.order_no %>
+  </div>
 
-<p>
-  <strong>Delivery date:</strong>
-  <%= @order.delivery_date %>
-</p>
+  <div class="col-md-4">
+    <strong>Express delivery:</strong>
+    <% if @order.is_express_delivery %>
+        <%= 'Yes' %>
+    <%else%>
+        <%= 'No' %>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Order currency:</strong>
-  <%= @order.order_currency %>
-</p>
+  <div class="col-md-4">
+    <strong>Custommer pickup:</strong>
+    <% if @order.is_custommer_Pickup %>
+        <%= 'Yes' %>
+    <%else%>
+        <%= 'No' %>
+    <% end %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <strong>Delivery date:</strong>
+    <%= @order.delivery_date.to_formatted_s(:rfc822) %>
+  </div>
 
-<p>
-  <strong>Order currency:</strong>
-  <%= @order.order_currency %>
-</p>
+  <div class="col-md-4">
+    <strong>Order currency:</strong>
+    <%= @order.order_currency %>
+  </div>
+  <div class="col-md-4">
+    <strong>Order Price:</strong>
+    <%= @order.order_price %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <strong>Special instruction:</strong>
+    <%= @order.special_instruction %>
+  </div>
+</div>
+<hr>
 
-<p>
-  <strong>Special instruction:</strong>
-  <%= @order.special_instruction %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%=@order.user.first_name + " " + @order.user.last_name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address.inspect %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<h3>Products</h3>
+<div class="row">
+  <div class="col-md-2"><strong>Name</strong></div>
+  <div class="col-md-2"><strong>SKU</strong></div>
+  <div class="col-md-2"><strong>Price</strong></div>
+  <div class="col-md-2"><strong>Quantity</strong></div>
+  <div class="col-md-2"><strong>Total</strong></div><br> 
+</div>
+<hr>
+<%= render @order.line_items %>

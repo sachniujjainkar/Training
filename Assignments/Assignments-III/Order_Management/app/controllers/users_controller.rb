@@ -4,6 +4,16 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+  def get_addresses
+    @user = User.find params[:id]
+    @addresses = @user.addresses
+
+    respond_to do |format|
+      format.json {render json: @addresses}
+    end
+  end
+
+
   def index
     @users = User.all
   end

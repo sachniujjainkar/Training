@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h2>User</h2>
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-sm btn-info" %> |
+<%= link_to 'Back', users_path, class: "btn btn-sm btn-info" %>
+<hr>
 <div class="row">
 	<div class="col-md-6">
 	  <strong>First name:</strong>
@@ -21,12 +24,10 @@
 
 	<div class="col-md-6">
 	  <strong>Birtday:</strong>
-	  <%= @user.birtday %>
+	  <%= @user.birtday.to_formatted_s(:rfc822)  %>
 	</div>
 </div>
 <hr>
 <h3>Addresses:</h3>
 <%= render @user.addresses %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

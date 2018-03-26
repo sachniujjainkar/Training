@@ -36,11 +36,11 @@
   <div class="row">
     <div class="col-md-4">
       <div class="col-md-4"><%= f.label :postal_code %></div>
-      <div class="col-md-6"><%= f.text_field :postal_code, id: :address_postal_code %></div>
+      <div class="col-md-6"><%= f.number_field :postal_code, id: :address_postal_code %></div>
     </div>
     <div class="col-md-4">
       <div class="col-md-4"><%= f.label :contact_no, class: "required" %></div>
-      <div class="col-md-6"><%= f.text_field :contact_no, id: :address_contact_no, :required => true %></div>
+      <div class="col-md-6"><%= f.number_field :contact_no, id: :address_contact_no, :required => true %></div>
     </div>
     <div class="col-md-4">
       <div class="col-md-4"><%= f.label :email %></div>
@@ -52,7 +52,7 @@
   <div class="row">
     <div class="col-md-4">
       <%= f.hidden_field :_destroy %>
-      <%= link_to "remove", '#', class: "remove_fields btn btn-xs btn-danger"%>
+      <a class="btn  remove_fields" href="#"><span class="glyphicon glyphicon-trash"  ></span></a>
     </div>
   </div> 
   <hr>

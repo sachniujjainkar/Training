@@ -11,7 +11,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1.json
   def show
     respond_to do |format|
-      format.html {redirect_to @address}
+      format.html 
       format.json { render json: @address}   if request.xhr? 
     end
   end

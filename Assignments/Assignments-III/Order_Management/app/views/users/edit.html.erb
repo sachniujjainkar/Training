@@ -1,6 +1,7 @@
 <h1>Editing User</h1>
-
+<%= link_to 'Show', @user, class: "btn btn-sm btn-info" %> |
+<%= link_to 'Back', users_path, class: "btn btn-sm btn-info" %>
+<hr>
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+

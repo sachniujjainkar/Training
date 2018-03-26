@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  require './app/pdfs/order_invice_pdf'
 
   # GET /orders
   # GET /orders.json
@@ -10,6 +11,13 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    respond_to do |format|
+        format.html
+        format.pdf do
+          pdf = OrderInvicePdf.new(@order)
+          send_data pdf.render, filename: 'OrderInvice.pdf', type: "application/pdf", disposition: "inline"    
+        end
+      end
   end
 
   # GET /orders/new
@@ -66,6 +74,7 @@ class OrdersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])
+      raise ActionController::RoutingError.new('Not Found') if @order.blank?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

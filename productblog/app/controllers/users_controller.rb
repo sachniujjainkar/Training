@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    #@users = User.all_except([1,2,3])
   end
 
   # GET /users/1
@@ -16,20 +17,16 @@ class UsersController < ApplicationController
 
 
 
-def get_addresses
- @user = User.find params[:id]
- @addresses = @user.addresses
+  def get_addresses
+    @user = User.find params[:id]
+    @addresses = @user.addresses
 
- respond_to do |format|
-  format.json {render json: @addresses}
- end
- end
+    respond_to do |format|
+      format.json {render json: @addresses}
+    end
+  end
 
-
-
-
-
- def show
+    def show
        @user = User.find params[:id]
        #respond_with @user
     end

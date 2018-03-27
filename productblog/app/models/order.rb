@@ -9,16 +9,11 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :lineitems
 
-
-  
-  #  def total_price
-  #   @total_price ||= lineitems.includes(:product).reduce(0) do |sum, l_item|
-  #     sum + (l_item.count * l_item.product.price)
-  #   end
-  # end
+  scope :fast_delivery, ->{ where(:is_express_delivery => true) }
 
   def total
   	lineitems.sum(&:price)
   end
+
   
  end

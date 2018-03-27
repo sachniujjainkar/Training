@@ -318,7 +318,7 @@ $(document).on("change", '#customer_id', function() {
  var user_id =  this.value;
  
  $.ajax({
-      url: "/users/"+user_id+"/get_addresses", //+SELLERID,
+      url: "/users/"+user_id+"/get_addresses", 
       type: "GET",
       dataType: "json",
       complete: function() {},

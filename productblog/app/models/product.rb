@@ -4,7 +4,7 @@ class Product < ApplicationRecord
 
 	  mount_uploader :image, ImageUploader
 
-	  belongs_to :category, required: false
+	  belongs_to :category, required: false, :touch => true
 
 
 
@@ -13,8 +13,10 @@ class Product < ApplicationRecord
 
 
 	validates_processing_of :image
-validate :image_size_validation
- 
+	validate :image_size_validation
+
+	scope :cheap, -> { where(price: 0..30) }
+	 
 private
   def image_size_validation
     errors[:image] << "should be less than 500KB" if image.size > 0.5.megabytes

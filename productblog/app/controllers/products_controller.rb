@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     #ap 'log'
     respond_to do |format|
         format.json { render json: @product}   
-        format.html #{redirect_to @product}
+        format.html 
     end
     return
   end
